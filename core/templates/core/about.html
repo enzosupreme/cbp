@@ -1,0 +1,27 @@
+{% extends 'core/base.html' %}
+
+{% block title %}About{% endblock %}
+{% block content %}
+
+
+
+
+<div class="mt-36 px-6 py-4 bg-black rounded-xl">
+
+    {% for topic in about %}
+        {% if topic.visible %}
+
+            <div class="mt-36 px-6 py-4 bg-black rounded-xl">
+                <img src="{{ topic.image.url }}" class=" object-fill rounded-t-xl">
+            </div>
+                <h2 class="mb-6 text-2xl text-center text-yellow-500">About</h2>
+
+                    <p class="text-sml text-center text-white hover:text-gray-500"><i>{{ topic.about }}</i></p>
+
+        {% endif %}
+    {% endfor %}
+
+</div>
+
+
+{% endblock %}

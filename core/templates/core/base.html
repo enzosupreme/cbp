@@ -1,0 +1,93 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <title>{% block title %}{% endblock %} | Circuit Bored</title>
+    </head>
+
+    <body class="bg-auto bg-black flex-col min-h-screen">
+
+  </div>
+        <nav class="relative flex w-full flex-nowrap py-2 px-2 flex justify-between bg-gray-700 items-center border-b border-gray-200">
+            <div class="grid grid-cols-2">
+            <a href="{% url 'browse:index' %}">
+                <img src="https://raw.githubusercontent.com/enzosupreme/cbl-images/main/logo.png"
+                class="flex object-scale-down h-20 w-40"/>
+                </a>
+
+                <div class="py-6 bg-gray-700 rounded-xl mb-18 text-2xl text-white hover:text-yellow-500">
+
+                <a href="/">
+                    Circuit Bored
+                </a>
+            </div>
+            </div>
+            <div class="lg:hidden"></div>
+            <ul class="hidden md:flex float-right mr-10 md:flex leading-[80px] space x-3">
+                <li class="mx-4 my-6 md:my-0">
+                    <a href="{% url 'browse:index' %}" class="text-sm md:text-md lg:text-lg font-semibold text-yellow-700 hover:text-white">Projects</a>
+                </li>
+                <li class="mx-4 my-6 md:my-0">
+                    <a href="{% url 'core:commission' %}" class="text-sm md:text-md lg:text-lg font-semibold text-yellow-700 hover:text-white">Commission</a>
+                </li>
+
+                <button class="bg-gray-900 text-sm sm:text-md lg:text-lg text-white hover:bg-yellow-900 hover:text-white rounded-xl px-6">
+                    <a href="https://circuitboredlab.etsy.com">
+                    Shop</a>
+                </button>
+
+                <li class="mx-4 my-6 md:my-0">
+                    <a href="{% url 'core:about' %}" class="text-sm md:text-md lg:text-lg font-semibold text-yellow-700 hover:text-white">About</a>
+                </li>
+
+            </ul>
+            </div>
+                <button id="hamburger-menu" class="lg:hidden text-yellow-500 p-2">
+                     <a href="{% url 'core:menu' %}">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                   </a>
+                </button>
+
+        </nav>
+
+        <div class="px-6 py-6">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        <footer class="pl-20 fixed bottom-0 z-50 mx-auto w-full max-w-screen-xl py-2 px-2 flex justify-between bg-gray-700">
+
+            <div class="w-full mx-auto max-w-screen-xl  py-2 md:flex md:items-center md:justify-between">
+    <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+
+        <li>
+        <a href="{% url 'core:about' %}" ><img src="https://raw.githubusercontent.com/enzosupreme/cbl-images/main/logo.png"
+                class="flex object-scale-down h-5 w-5 pr-2"/></a>
+        </li>
+
+        <li>
+            <a href="https://github.com/enzosupreme" class="mr-4 hover:underline md:mr-6 ">Github</a>
+        </li>
+        <li>
+            <a href="https://www.instagram.com/circuitboredlab/" class="mr-4 hover:underline md:mr-6 ">Instagram</a>
+        </li>
+        <li>
+            <a href="https://x.com/CircuitBoredLab?t=5E3CiOdZE1bWFomF7Cq2Tw&s=09" class="mr-4 hover:underline md:mr-6">Twitter | X</a>
+        </li>
+
+    </ul>
+
+            </div>
+
+        </footer>
+
+    </body>
+
+
+
+</html>
