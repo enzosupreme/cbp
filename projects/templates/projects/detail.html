@@ -18,6 +18,7 @@
             {{ projects.description  }}
         </p>
         </a>
+            
         <br>
             <div class="grid grid-cols-2 space-x-3">
             {% if projects.github %}
@@ -27,7 +28,7 @@
                 <a href="{{ projects.youtube }}" class="inline-block mt-6 py-3 text-xs sm:text-md lg:text-lg xl:text-xl font-semibold bg-contain bg-red-700 text-white text-center rounded-xl hover:bg-red-800">Youtube</a>
             {% endif %}
             {% if projects.shop %}
-                <a href="{{ projects.shop }}" class="inline-block mt-6 px-2 py-3 text-xs sm:text-md lg:text-lg xl:text-xl font-semibold bg-contain bg-purple-900 text-white text-center rounded-xl hover:bg-purple-700">Buy</a>
+                <a href="{{ projects.shop }}" class="inline-block mt-6 px-2 py-3 text-xs sm:text-md lg:text-lg xl:text-xl font-semibold bg-contain bg-purple-900 text-white text-center rounded-xl hover:bg-purple-700">Buy    ${{ projects.price }}</a>
             {% endif %}
             </div>
         <br></br>
