@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Images{% endblock %}
+
+{% block content %}
+
+        <div class="grid grid-cols-3 gap-3">
+             <form method="get" action="{% url 'projects:images' %}">
+            {% for image in images %}
+            <div>
+                {% if image.projects %}
+                    <div>
+                        <img src="{{ image.image.url }}" class="rounded-xl w-25 h-25">
+                    </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+             </form>
+        </div>
+
+
+{% endblock %}

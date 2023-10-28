@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
 from django.db.models import Q
 
-from projects.models import Project, Category, About
+from projects.models import Project, Category, About, Garden_Pic
 
 
 def index(request):
@@ -39,4 +39,10 @@ def projects(request):
         'query':query,
         'categories':categories,
         'category_id': int(category_id)
+    })
+def garden(request):
+    images = Garden_Pic.objects.all()
+
+    return render(request, 'browse/shangri-la.html', {
+        'images':images,
     })

@@ -69,3 +69,9 @@ class About(models.Model):
     def __str__(self):
         return self.name
 
+class Image(models.Model):
+    projects = models.ForeignKey(Project, related_name='images', on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='project_images', blank=True, null=True)
+
+class Garden_Pic(models.Model):
+    image = models.ImageField(upload_to='project_images', blank=True, null=True)

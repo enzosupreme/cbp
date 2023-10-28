@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Shangri-la{% endblock %}
+
+{% block content %}
+
+        <div class="grid grid-cols-5 gap-3">
+            {% for image in images %}
+            <div>
+                    <div>
+                        <img src="{{ image.image.url }}" class="rounded-xl w-25 h-25">
+                    </div>
+            </div>
+            {% endfor %}
+        </div>
+
+
+{% endblock %}

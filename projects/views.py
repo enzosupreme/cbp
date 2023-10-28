@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.db.models import Q
 
 from .forms import NewProjectForm, EditProjectForm
-from .models import Project, Category
+from .models import Project, Category, Image
 
 def detail(request, pk):
     projects = get_object_or_404(Project, pk=pk)
@@ -85,3 +85,23 @@ def edit(request, pk):
         'form': form,
         'title': 'Edit Project'
     })
+
+def image(request,pk):
+
+    projects = get_object_or_404(Image,pk=pk)
+    projects_id = request.GET('projects', 0)
+    images = Image.objects.all()
+    project_images = Image.objects.filter(images.projects)
+
+    if projects_id:
+        projects = projects.filter(projects_id=projects_id)
+
+    return render(request, 'projects/images.html',{
+        'projects':projects,
+        'project':project,
+        'images': images,
+        'project_images':project_images,
+        'projects_id': int(projects_id),
+    })
+
+
