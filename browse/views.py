@@ -46,3 +46,10 @@ def garden(request):
     return render(request, 'browse/shangri-la.html', {
         'images':images,
     })
+
+def image(request, pk):
+    images = get_object_or_404(Garden_Pic, pk=pk)
+
+    return render(request, 'browse/images.html', {
+        'images': images,
+    })

@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Garden Pic{% endblock %}
+
+{% block content %}
+
+    <div class="p-6 bg-gray-900 rounded-xl">
+        <div class=" grid h-100 w-100 gap-6 p-3">
+
+        <a href="{% url 'browse:shangri-la' %}">
+
+            <div class="col-span-3">
+            <img src="{{ images.image.url }}" class="mb-8 rounded-xl">
+            </div>
+        </a>
+
+        </div>
+    </div>
+
+{% endblock %}
