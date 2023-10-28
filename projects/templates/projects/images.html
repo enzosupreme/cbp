@@ -1,21 +1,36 @@
 {% extends 'core/base.html' %}
 
-{% block title %}Images{% endblock %}
+{% block title %}{{ projects.name }}{% endblock %}
 
 {% block content %}
 
-        <div class="grid grid-cols-3 gap-3">
-             <form method="get" action="{% url 'projects:images' %}">
-            {% for image in images %}
-            <div>
-                {% if image.projects %}
+        <div class="grid grid-cols-2 gap-3">
+            <a href="{% url 'browse:index' %}">
                     <div>
-                        <img src="{{ image.image.url }}" class="rounded-xl w-25 h-25">
+                        <img src="{{ projects.image.url }}" class="rounded-xl w-50 h-50">
                     </div>
-                {% endif %}
-            </div>
-            {% endfor %}
-             </form>
+                </a>
+            {% if projects.image2 %}
+                <a href="{% url 'browse:index' %}">
+                    <div>
+                        <img src="{{ projects.image2.url }}" class="rounded-xl w-50 h-50">
+                    </div>
+                </a>
+            {% endif %}
+            {% if projects.image3 %}
+                <a href="{% url 'browse:index' %}">
+                    <div>
+                        <img src="{{ projects.image2.url }}" class="rounded-xl w-50 h-50">
+                    </div>
+                </a>
+            {% endif %}
+            {% if projects.image4 %}
+                <a href="{% url 'browse:index' %}">
+                    <div>
+                        <img src="{{ projects.image2.url }}" class="rounded-xl w-50 h-50">
+                    </div>
+                </a>
+            {% endif %}
         </div>
 
 
