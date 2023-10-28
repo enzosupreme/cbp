@@ -10,20 +10,8 @@
         <a href="{% url 'browse:index' %}">
         <h1 class="mb-6 text-xs sm:text-md lg:text-lg xl:text-xl text-white hover:text-yellow-700">{{ projects.name }}</h1>
 
-            <div class="col-span-2 grid grid-cols-2 p-4">
-            <img src="{{ projects.image.url }}" class="mb-8 py-2 px-2 rounded-xl">
-            {% if projects.image2 %}
-                <img src="{{ projects.image2.url }}" class="mb-8 py-2 px-2 rounded-xl">
-            {% endif %}
-
-            {% if projects.image3 %}
-                <img src="{{ projects.image3.url }}" class="mb-8 py-2 px-2 rounded-xl">
-            {% endif %}
-
-            {% if projects.image4 %}
-                <img src="{{ projects.image4.url }}" class="mb-8 py-2 px-2 rounded-xl">
-            {% endif %}
-
+            <div class="col-span-2">
+            <img src="{{ projects.image.url }}" class="mb-8 rounded-xl">
             </div>
             <strong class="text-yellow-800">Project Log:</strong><br>
         <p class="pl-3 text-white text-center justify-center items-center">
