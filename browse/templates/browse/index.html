@@ -22,7 +22,11 @@
                     </div>
 
                     <div class="p-3 bg-black rounded-b-xl">
-                        <h2 class="text-sm sm:text-sm lg:text-lg xl:text-xl text-yellow-900">{{ project.name }}</h2>
+
+                        <h2 class="text-sm sm:text-sm lg:text-lg xl:text-xl text-yellow-900">{{ project.name }}
+                            <a href="{% url 'projects:images' project.id %}" ></a>
+                        </h2>
+
                     </div>
                 </a>
             </div>

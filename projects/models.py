@@ -39,6 +39,7 @@ class Project(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     invisible = models.BooleanField(default=False)
     github = models.URLField(max_length=200, blank=True, null=True)
+    pictures = models.URLField(max_length=200, blank=True, null=True)
     youtube = models.URLField(max_length=200, blank=True, null=True)
     shop = models.URLField(max_length=200, blank=True, null=True)
     price = models.DecimalField(max_digits=6,decimal_places=2,blank=True,null=True)
