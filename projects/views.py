@@ -91,6 +91,14 @@ def images(request,pk):
 
     return render(request, 'projects/images.html', {
         'projects':projects,
+
+    })
+
+def enhance(request,pk):
+    img = Project.objects.filter(Project, pk=pk)
+
+    return render(request, 'projects/enchance.html', {
+        'img': img,
     })
 
 

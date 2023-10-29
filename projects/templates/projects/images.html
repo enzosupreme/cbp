@@ -4,34 +4,34 @@
 
 {% block content %}
 
-        <div class="grid grid-cols-2 gap-3">
-            <a href="{% url 'browse:index' %}">
-                    <div>
-                        <img src="{{ projects.image.url }}" class="rounded-xl w-50 h-50">
-                    </div>
-                </a>
-            {% if projects.image2 %}
+
+            <div class=" py-4 px-4">
                 <a href="{% url 'browse:index' %}">
                     <div>
-                        <img src="{{ projects.image2.url }}" class="rounded-xl w-50 h-50">
+                        <img src="{{ projects.image.url }}" class=" p-6 w-50 h-50 rounded-xl">
                     </div>
                 </a>
-            {% endif %}
-            {% if projects.image3 %}
+
                 <a href="{% url 'browse:index' %}">
                     <div>
-                        <img src="{{ projects.image3.url }}" class="rounded-xl w-50 h-50">
+                        <img src="{{ projects.image2.url }}" class=" p-6 w-50 h-50 rounded-xl">
                     </div>
                 </a>
-            {% endif %}
-            {% if projects.image4 %}
+
                 <a href="{% url 'browse:index' %}">
                     <div>
-                        <img src="{{ projects.image4.url }}" class="rounded-xl w-50 h-50">
+                        <img src="{{ projects.image3.url }}" class=" p-6 w-50 h-50 rounded-xl">
                     </div>
                 </a>
-            {% endif %}
-        </div>
+
+                <a href="{% url 'browse:index' %}">
+                    <div>
+                        <img src="{{ projects.image4.url }}" class=" p-6 w-50 h-50 rounded-xl">
+                    </div>
+                </a>
+
+           </div>
+
 
 
 {% endblock %}

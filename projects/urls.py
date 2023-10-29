@@ -11,4 +11,5 @@ urlpatterns = [
     path('<int:pk>/images/', views.images, name='images'),
     path('<int:pk>/', views.detail, name='detail'),
     path('<int:pk>/edit/', views.edit, name='edit'),
+    path('<int:pk>/enchance/', views.enhance, name='enhance'),
 ]
