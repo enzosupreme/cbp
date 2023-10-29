@@ -2,10 +2,17 @@
 
 {% block title %}Welcome{% endblock %}
 {% block content %}
-    <div class="px-6 py-6 bg-black mb-8 text-2xl pr-6 text-center text-yellow-900">
+    <div class="px-6 py-6 bg-black mb-3">
+        <h2 class="text-2xl pr-6 text-center text-yellow-700">
             <i>
-                'All you need is the desire to make beautiful things happen'
+                'All you need is the <span class="text-red-700">desire</span> to
             </i>
+        </h2>
+        <h2 class="text-2xl pr-6 text-center text-yellow-700">
+            <i>
+                'make <span class="text-green-700">beautiful things</span> happen'
+            </i>
+        </h2>
         </div>
         <div class="px-1 py-1 bg-black mb-8 text-2xl pr-6 text-center text-white">
             <i>
@@ -15,8 +22,8 @@
     <a href="{% url 'browse:index' %}">
 
     </a>
-    <div class="px-6 py-10 bg-green-900 rounded-xl">
-        <h2 class="mb-8 text-2xl pr-6 text-center text-white">Latest Projects</h2>
+    <div class="px-6 py-10 bg-black rounded-xl">
+        <h2 class="mb-8 text-2xl pr-6 text-center text-purple-900 hover:text-white">Latest Projects</h2>
 
         <form method="get" action="{% url 'browse:index' %}">
             </form>
@@ -29,7 +36,7 @@
                         <img src="{{ project.image.url }}" class=" object-fill rounded-t-xl">
                     </div>
 
-                    <div class="p-3 bg-black rounded-b-xl">
+                    <div class="p-3 bg-purple-900 rounded-b-xl">
                         <h2 class="text-sm sm:text-md lg:text-lg text-white">{{ project.name }}</h2>
                     </div>
                 </a>
