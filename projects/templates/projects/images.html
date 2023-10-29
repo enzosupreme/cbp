@@ -6,25 +6,25 @@
 
 
             <div class=" py-4 px-4">
-                <a href="{% url 'browse:index' %}">
+                <a href="{% url 'projects:detail' projects.id %}">
                     <div>
                         <img src="{{ projects.image.url }}" class=" p-6 w-50 h-50 rounded-xl">
                     </div>
                 </a>
 
-                <a href="{% url 'browse:index' %}">
+                <a href="{% url 'projects:detail' projects.id %}">
                     <div>
                         <img src="{{ projects.image2.url }}" class=" p-6 w-50 h-50 rounded-xl">
                     </div>
                 </a>
 
-                <a href="{% url 'browse:index' %}">
+                <a href="{% url 'projects:detail' projects.id %}">
                     <div>
                         <img src="{{ projects.image3.url }}" class=" p-6 w-50 h-50 rounded-xl">
                     </div>
                 </a>
 
-                <a href="{% url 'browse:index' %}">
+                <a href="{% url 'projects:detail' projects.id %}">
                     <div>
                         <img src="{{ projects.image4.url }}" class=" p-6 w-50 h-50 rounded-xl">
                     </div>
