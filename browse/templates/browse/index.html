@@ -4,14 +4,14 @@
 {% block content %}
     <div class="grid grid-cols-6">
         {% for category in categories %}
-                <h1 class="mb-6 px-2 text-xs sm:text-sm lg:text-lg xl:text-xl text-center text-white hover:text-yellow-900{% if category.id == category_id %} text-yellow-900{% endif %}">
+                <h1 class="mb-6 px-2 text-xs sm:text-sm lg:text-lg xl:text-xl text-center text-white hover:text-yellow-900{% if category.id == category_id %} text-yellow-500{% endif %}">
                     <a href="{% url 'browse:index' %}?query={{ query }}&category={{ category.id }}">{{ category.name }}</a>
                 </h1>
 
         {% endfor %}
     </div>
 
-    <div class="mt-2 mb-20 px-3 py-12 bg-green-900 rounded-xl">
+    <div class="mt-2 mb-20 px-3 py-12 bg-black-rounded-xl">
 
         <div class="grid grid-cols-3 gap-3">
             {% for project in projects %}
@@ -21,9 +21,9 @@
                         <img src="{{ project.image.url }}" class="object-contain rounded-t-xl">
                     </div>
 
-                    <div class="p-3 bg-black rounded-b-xl">
+                    <div class="p-3 bg-green-900 rounded-b-xl">
 
-                        <h2 class="text-sm sm:text-sm lg:text-lg xl:text-xl text-yellow-900">{{ project.name }}
+                        <h2 class="text-sm sm:text-sm lg:text-lg xl:text-xl text-yellow-500">{{ project.name }}
                             <a href="{% url 'projects:images' project.id %}" ></a>
                         </h2>
 
