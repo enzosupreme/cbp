@@ -15,8 +15,8 @@
     <a href="{% url 'browse:index' %}">
 
     </a>
-    <div class="px-6 py-10 bg-gray-900 rounded-xl">
-        <h2 class="mb-8 text-2xl pr-6 text-center text-yellow-900">Latest Projects</h2>
+    <div class="px-6 py-10 bg-green-900 rounded-xl">
+        <h2 class="mb-8 text-2xl pr-6 text-center text-white">Latest Projects</h2>
 
         <form method="get" action="{% url 'browse:index' %}">
             </form>
@@ -44,7 +44,7 @@
         <div class="grid grid-cols-3 gap-3">
             {% for category in categories %}
             <div>
-                    <div class="p-3 bg-gray-900 rounded-xl">
+                    <div class="p-3 bg-green-900 rounded-xl">
                         <a href="{% url 'browse:index' %}?query={{ query }}&category={{ category.id }}">
                             <h2 class="text-xs sm:text-s lg:text-lg xl:text-xl text-white hover:text-yellow-700">{{ category.name }}</h2>
                             <p class=" text-xs sm:text-s lg:text-lg xl:text-xl text-yellow-700"> {{ category.projects.count }} projects</p>

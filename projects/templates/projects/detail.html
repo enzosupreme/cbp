@@ -4,7 +4,7 @@
 
 {% block content %}
 
-    <div class="p-6 bg-gray-900 rounded-xl">
+    <div class="p-6 bg-green-900 rounded-xl">
         <div class=" grid h-100 w-100 gap-6 p-3">
 
         <a href="{{ projects.pictures }}">
@@ -36,9 +36,9 @@
 </div>
 
 
- <div class="mt-6  mb-20 px-6 py-12 bg-gray-900 rounded-xl">
+ <div class="mt-6  mb-20 px-6 py-12 bg-green-900 rounded-xl">
       <a href="{% url 'browse:index' %}?query={{ query }}&category={{ projects.category.id }}">
-        <h2 class="mb-12 text-xs sm:text-md lg:text-lg xl:text-xl text-center text-yellow-900">More {{ projects.category }}</h2>
+        <h2 class="mb-12 text-xs sm:text-md lg:text-lg xl:text-xl text-center text-white">More {{ projects.category }}</h2>
       </a>
         <div class="grid grid-cols-2 gap-3">
             {% for project in related_projects %}
