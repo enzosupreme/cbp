@@ -4,7 +4,7 @@
 
 {% block content %}
 
-        <div class="grid grid-cols-5 gap-3">
+        <div class="grid grid-cols-5 gap-3 mb-20">
             {% for image in images %}
             <div>
                 <a href="{% url 'browse:images' image.id %}">
