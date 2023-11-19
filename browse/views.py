@@ -2,9 +2,15 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
 from django.db.models import Q
+#from adafruit_IO import Client,MQTTClient,Feed
 
 from projects.models import Project, Category, About, Garden_Pic
 
+#username = 'your_adafruit_io_username'
+#key = 'your_adafruit_io_key'
+
+#aio = adafruitIO(username, key)
+#feed_id = feed['thermo']
 
 def index(request):
     query = request.GET.get('query', '')
@@ -53,3 +59,10 @@ def image(request, pk):
     return render(request, 'browse/images.html', {
         'images': images,
     })
+@login_required
+def thermo(request):
+
+    return render(request, 'browse/thermo.html', {
+        #'images':images,
+    })
+
