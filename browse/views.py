@@ -3,7 +3,9 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
 from django.db.models import Q
 #from adafruit_IO import Client,MQTTClient,Feed
-
+from .models import Santa, Gift
+from .forms import SignupForm
+import random
 from projects.models import Project, Category, About, Garden_Pic
 
 #username = 'your_adafruit_io_username'
@@ -65,4 +67,41 @@ def thermo(request):
     return render(request, 'browse/thermo.html', {
         #'images':images,
     })
+
+def santa(request):
+    santas = Santa.objects.all()
+    r = random.randint(0,(len(santas)-1))
+
+    secret_santa = santas[r]
+
+    return render(request, 'browse/santa.html', {
+        'r': r,
+        'santas': santas,
+        'secret_santa': secret_santa
+    })
+
+def signup(request):
+    if request.method =='POST':
+        form = SignupForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+
+            return redirect('/login/')
+    else:
+        form = SignupForm()
+
+    return render(request, 'browse/signup.html', {
+
+        'form': form
+    })
+
+def gift(request):
+
+    gifts = Gift.objects.all()
+
+    return render(request,'browse/santa.html', {
+        'gifts': gifts
+    })
+
 
