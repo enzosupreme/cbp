@@ -8,7 +8,7 @@ from projects.models import Category, Project, Service, ServiceRequest, Menu_ite
 from .forms import ServiceForm
 
 def index(request):
-    projects = Project.objects.filter(invisible=False)[0:2]
+    projects = Project.objects.filter(front_page=True)[0:2]
     categories = Category.objects.all()
 
     return render(request, 'core/index.html', {

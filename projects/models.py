@@ -38,6 +38,7 @@ class Project(models.Model):
     image4 = models.ImageField(upload_to='project_images', blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     invisible = models.BooleanField(default=False)
+    front_page = models.BooleanField(default=False)
     github = models.URLField(max_length=200, blank=True, null=True)
     pictures = models.URLField(max_length=200, blank=True, null=True)
     youtube = models.URLField(max_length=200, blank=True, null=True)

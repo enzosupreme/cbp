@@ -14,7 +14,7 @@ class Santa(models.Model):
 
 class Gift(models.Model):
     name = models.CharField(max_length=75,blank=True,null=True)
-    number = models.IntegerField(max_length=2)
+    number = models.IntegerField(max_length=255,blank=True,null=True)
     password = models.CharField(max_length=75,blank=True,null=True)
 
     def __str__(self):
