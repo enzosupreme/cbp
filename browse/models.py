@@ -12,10 +12,11 @@ class Santa(models.Model):
     def __str__(self):
         return self.name
 
-class Gift(models.Model):
-    name = models.CharField(max_length=75,blank=True,null=True)
-    number = models.IntegerField(max_length=255,blank=True,null=True)
-    password = models.CharField(max_length=75,blank=True,null=True)
 
-    def __str__(self):
-        return self.name
+
+class Gifter(models.Model):
+
+    number = models.IntegerField(blank=True,null=True)
+    created_by = models.ForeignKey(User, related_name='numbers', on_delete=models.CASCADE, null=True)
+
+

@@ -1,10 +1,10 @@
 
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.db.models import Q
 #from adafruit_IO import Client,MQTTClient,Feed
-from .models import Santa, Gift
-from .forms import SignupForm
+from .models import Santa, Gifter
+from .forms import SignupForm, SecretSanta
 import random
 from projects.models import Project, Category, About, Garden_Pic
 
@@ -67,17 +67,19 @@ def thermo(request):
     return render(request, 'browse/thermo.html', {
         #'images':images,
     })
-
+@login_required
 def santa(request):
+    gifts = Gifter.objects.filter(created_by=request.user)
     santas = Santa.objects.all()
-    r = random.randint(0,(len(santas)-1))
+    #r = random.randint(0,(len(gifts)-1))
 
-    secret_santa = santas[r]
+    secret_santa = gifts[0].number
+    ss = santas[secret_santa-1]
 
     return render(request, 'browse/santa.html', {
-        'r': r,
-        'santas': santas,
-        'secret_santa': secret_santa
+        'gifts': gifts,
+        'secret_santa': secret_santa,
+        'ss':ss,
     })
 
 def signup(request):
@@ -87,21 +89,33 @@ def signup(request):
         if form.is_valid():
             form.save()
 
-            return redirect('/login/')
+            return redirect('/browse/login/')
     else:
         form = SignupForm()
 
     return render(request, 'browse/signup.html', {
 
-        'form': form
+        'form': form,
     })
-
+@login_required
 def gift(request):
 
-    gifts = Gift.objects.all()
+    if request.method == 'POST':
+        form = SecretSanta(request.POST)
 
-    return render(request,'browse/santa.html', {
-        'gifts': gifts
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.created_by = request.user
+            post.save()
+
+            return redirect('/browse/santa')
+    else:
+        form = SecretSanta()
+
+
+    return render(request,'browse/ticket.html', {
+        'form': form,
     })
+
 
 

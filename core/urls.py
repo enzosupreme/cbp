@@ -11,4 +11,5 @@ urlpatterns = [
     path('browse/', include('browse.urls')),
     path('commission/', views.commission, name='commission'),
     path('menu/', views.menu_items, name='menu'),
+    path('roll/',views.roll, name='roll'),
 ]

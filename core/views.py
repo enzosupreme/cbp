@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.template.loader import render_to_string
 from django.core.mail import send_mail
 from django.conf import settings
+import random
 
 from projects.models import Category, Project, Service, ServiceRequest, Menu_item, About
 
@@ -69,4 +70,10 @@ def about(request):
 
     return render(request, 'core/about.html', {
         'about':about
+    })
+def roll(request):
+    r = random.randint(1, 6)
+
+    return render(request,'core/roll.html',{
+        'r':r,
     })

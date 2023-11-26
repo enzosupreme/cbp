@@ -1,7 +1,9 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
+from .models import Santa, Gifter
 
+INPUT_CLASSES = 'w-full py-4 px-6 rounded-xl border'
 class LoginForm(AuthenticationForm):
     username = forms.CharField(widget=forms.TextInput(attrs={
         'placeholder': 'Your Username',
@@ -15,16 +17,13 @@ class LoginForm(AuthenticationForm):
 class SignupForm(UserCreationForm):
     class Meta:
         model = User
-        fields = ('username', 'number','password1','password2')
+        fields = ('username','password1','password2')
 
     username = forms.CharField(widget=forms.TextInput(attrs={
         'placeholder': 'Your Username',
         'class': 'w-full py-4 px-6 rounded-xl'
     }))
-    number = forms.IntegerField(widget=forms.PasswordInput(attrs={
-        'placeholder': 'Enter Your Secret Santa Number',
-        'class': 'w-full py-4 px-6 rounded-xl'
-    }))
+
     password1 = forms.CharField(widget=forms.PasswordInput(attrs={
         'placeholder': 'Create Password',
         'class': 'w-full py-4 px-6 rounded-xl'
@@ -33,3 +32,11 @@ class SignupForm(UserCreationForm):
         'placeholder': 'Confirm Password',
         'class': 'w-full py-4 px-6 rounded-xl'
     }))
+
+class SecretSanta(forms.ModelForm):
+    class Meta:
+        model = Gifter
+        fields = ('number',)
+
+        number = forms.CharField(widget= forms.IntegerField())
+

@@ -27,8 +27,11 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 ALLOWED_HOSTS = []
 
 LOGIN_URL = '/login/'
-LOGIN_REDIRECT_URL= '/'
+LOGIN_REDIRECT_URL= '/browse/ticket'
 LOGOUT_REDIRECT_URL = '/'
+
+SANTA_URL = '/santa/'
+SANTA_REDIRECT_URL = 'browse/santa/'
 
 # Application definition
 

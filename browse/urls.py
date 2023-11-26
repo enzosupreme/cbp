@@ -14,6 +14,7 @@ urlpatterns = [
     path('<int:pk>/', views.image, name='images'),
     path('thermo/',views.thermo, name='thermo'),
     path('santa/',views.santa, name='santas'),
+    path('ticket/', views.gift, name='gifts'),
     path('signup/',views.signup,name='signup'),
     path('login/',auth_views.LoginView.as_view(template_name='browse/login.html',authentication_form=LoginForm), name='login'),
 ]
