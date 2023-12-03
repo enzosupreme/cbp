@@ -72,7 +72,7 @@ def about(request):
         'about':about
     })
 def roll(request):
-    r = random.randint(1, 6)
+    r = random.randint(1, 7)
 
     return render(request,'core/roll.html',{
         'r':r,
