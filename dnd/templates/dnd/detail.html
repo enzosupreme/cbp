@@ -10,13 +10,31 @@
         <a href="{{ npcs.pictures }}">
         <h1 class="mb-6 text-xs sm:text-md lg:text-lg xl:text-xl text-center text-yellow-500 hover:text-yellow-700">{{npcs.name }}</h1>
 
-            <div class="col-span-2">
-            <img src="{{ npcs.image.url }}" class="mb-8 rounded-xl">
+            <div class="grid grid-cols-2">
+            <img src="{{ npcs.image.url }}" class="cols-span-2 pr-6 mb-8 rounded-xl">
+            <div class=" bg-gray-700 pl-6 col-span-1 rounded-xl">
+                <strong class="text-yellow-800 text-center">Affiliation:</strong><br>
+        <p class="pl-3 text-white">
+            {{ npcs.affiliation  }}
+        </p>
+            <strong class="text-yellow-800 text-center">Age:</strong><br>
+        <p class="pl-3 text-white">
+            {{ npcs.age  }}
+        </p>
+            <strong class="text-yellow-800">Height:</strong><br>
+        <p class="pl-3 text-white">
+            {{ npcs.height  }}
+        </p>
             </div>
-            <strong class="text-yellow-800">Details:</strong><br>
-        <p class="pl-3 text-white text-center justify-center items-center">
+            </div>
+
+
+            <strong class=" text-yellow-800">Details:</strong><br>
+        <p class="p-6 bg-gray-700 text-white text-center justify-center items-center rounded-xl">
             {{ npcs.description  }}
         </p>
+
+
         </a>
 
 
