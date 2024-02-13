@@ -1,0 +1,38 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Non Player Characters{% endblock %}
+{% block content %}
+    <div class="grid grid-cols-6">
+        {% for affiliation in affiliations %}
+                <h1 class="mb-6 px-2 text-xs sm:text-sm lg:text-lg xl:text-xl text-center text-white hover:text-yellow-900{% if category.id == category_id %} text-yellow-500{% endif %}">
+                    <a href="{% url 'browse:index' %}?query={{ query }}&affiliation={{ affiliation.id }}">{{ affiliation.name }}</a>
+                </h1>
+
+        {% endfor %}
+    </div>
+
+    <div class="mt-2 mb-20 px-3 py-12 bg-black-rounded-xl">
+
+        <div class="grid grid-cols-2 gap-3">
+            {% for npc in npcs %}
+            <div>
+                <a href="{% url 'dnd:detail' npc.id %}">
+                    <div>
+                        <img src="{{ npc.image.url }}" class="object-contain rounded-t-xl">
+                    </div>
+
+                    <div class="p-3 bg-green-900 rounded-b-xl">
+
+                        <h2 class="text-sm sm:text-sm lg:text-lg xl:text-xl text-yellow-600 hover:text-white">{{ npc.name }}
+
+                        </h2>
+
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+{% endblock %}

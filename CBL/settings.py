@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "browse",
     "projects",
     "charolette",
+    "dnd",
 ]
 
 MIDDLEWARE = [
