@@ -12,20 +12,20 @@
         </div>
 
         <div class="text-xs sm:text-md lg:text-lg xl:text-xl text-center mb-4 bg-green-900 pl-6 grid grid-cols-3 rounded-xl">
-               <strong class="p-1 bg-green-900 rounded-xl text-yellow-600">Character:<span class="pl-6 text-white"> {{ characters.character_name }} </span></strong>
-               <strong class="p-1 bg-green-900 rounded-xl text-yellow-600">Race<span class="pl-6 text-white"> {{ characters.race }} </span></strong>
-               <strong class="p-1 bg-green-900 rounded-xl text-yellow-600">Class:<span class="pl-6 text-white"> {{ characters.skill_class }} </span></strong>
+               <strong class="p-1 bg-green-900 rounded-xl text-yellow-600">Character:<span class="pl-3 text-white"> {{ characters.character_name }} </span></strong>
+               <strong class="p-1 bg-green-900 rounded-xl text-yellow-600">Race<span class="pl-3 text-white"> {{ characters.race }} </span></strong>
+               <strong class="p-1 bg-green-900 rounded-xl text-yellow-600">Class:<span class="pl-3 text-white"> {{ characters.skill_class }} </span></strong>
         </div>
         <div class="pl-6 cols-span-3">
 
             <div class="text-xs sm:text-md lg:text-lg xl:text-xl text-center mb-6 p-3 justify-center items-center bg-black rounded-xl col-span-1">
 
-               <strong class="pl-4 text-yellow-500">Strength:<span class="pl-6 text-white"> {{ characters.str }} </span></strong>
-               <strong class="pl-4 text-yellow-500">Dexterity<span class="pl-6 text-white"> {{ characters.dex }} </span></strong>
-               <strong class="pl-4 text-yellow-500">Constitution:<span class="pl-6 text-white"> {{ characters.con }} </span></strong>
-               <strong class="pl-4 text-yellow-500">Intelligence:<span class="pl-6 text-white"> {{ characters.int }} </span></strong>
-               <strong class="pl-4 text-yellow-500">Wisdom:<span class="pl-6 text-white"> {{ characters.wis }} </span></strong>
-               <strong class="pl-4 text-yellow-500">Charisma:<span class="pl-6 text-white"> {{ characters.cha }} </span></strong>
+               <strong class="pl-4 text-yellow-500">Strength:<span class="p-2 text-white">{{ characters.str }} </span></strong>
+               <strong class="pl-4 text-yellow-500">Dexterity<span class="p-2 text-white">{{ characters.dex }} </span></strong>
+               <strong class="pl-4 text-yellow-500">Constitution:<span class="p-2 text-white"> {{ characters.con }} </span></strong>
+               <strong class="pl-4 text-yellow-500">Intelligence:<span class="p-2 text-white"> {{ characters.int }} </span></strong>
+               <strong class="pl-4 text-yellow-500">Wisdom:<span class="p-2 text-white"> {{ characters.wis }} </span></strong>
+               <strong class="pl-4 text-yellow-500">Charisma:<span class="p-2 text-white"> {{ characters.cha }} </span></strong>
 
             </div>
         </div>
@@ -97,10 +97,10 @@
                 </div>
             </div>
         <strong class="text-yellow-800">Stats:</strong><br>
-        <div class="text-xs sm:text-md lg:text-lg xl:text-xl text-center mb-2 mt-2 bg-green-900 rounded-xl">
-               <strong class="bg-black rounded-xl text-yellow-600 pl-6">HP:<span class="pl-20 text-white rounded-xl"> {{ characters.hp }} </span></strong>
-               <strong class="bg-black rounded-xl text-yellow-600 pl-6">AC:<span class="pl-20 text-white"> {{ characters.ac }} </span></strong>
-               <strong class="bg-black rounded-xl text-yellow-600 pl-6">Level:<span class="pl-20 text-white"> {{ characters.lvl }} </span></strong>
+        <div class="px-3 text-xs sm:text-md lg:text-lg xl:text-xl text-center mb-2 mt-2 bg-green-900 rounded-xl">
+               <strong class="bg-black rounded-xl text-yellow-600 pl-6">HP:<span class="p-2 text-white rounded-xl"> {{ characters.hp }} </span></strong>
+               <strong class="bg-black rounded-xl text-yellow-600 pl-6">AC:<span class="p-2 text-white"> {{ characters.ac }} </span></strong>
+               <strong class="bg-black rounded-xl text-yellow-600 pl-6">Level:<span class="p-2 text-white"> {{ characters.lvl }} </span></strong>
         </div>
 
             <div class="mb-3 grid grid-cols-1">
@@ -110,7 +110,7 @@
             <div class="bg-green-900 rounded-xl">
             <div class="grid grid-cols-1">
                 <div class="cols-span-3">
-            <div class="text-xs sm:text-md lg:text-lg xl:text-xl text-center bg-green-900 pl-6 grid grid-cols-3 col-span-3 rounded-xl">
+            <div class="text-xs sm:text-md lg:text-lg xl:text-xl text-center bg-green-900 grid grid-cols-3 rounded-xl">
                <strong class="text-yellow-500">Weapon<span class="text-white"> {{ characters.weapon }} </span></strong>
                <strong class="text-yellow-500">Damage<span class="text-white"> {{ characters.weapon.damage }} </span></strong>
                <strong class="text-yellow-500">Bonus <span class="text-white"> +{{ characters.weapon_bonus }} </span></strong>
@@ -120,7 +120,7 @@
             {% if characters.weapon_2 %}
             <div class="grid grid-cols-1">
                 <div class="cols-span-3">
-            <div class="text-xs sm:text-md lg:text-lg xl:text-xl text-center bg-green-900 pl-6 grid grid-cols-3 col-span-3 rounded-xl">
+            <div class="text-xs sm:text-md lg:text-lg xl:text-xl text-center bg-green-900 grid grid-cols-3 col-span-3 rounded-xl">
                <strong class="text-yellow-500">Weapon<span class="text-white"> {{ characters.weapon_2 }} </span></strong>
                <strong class="text-yellow-500">Damage<span class="text-white"> {{ characters.weapon_2.damage }} </span></strong>
                <strong class="text-yellow-500">Bonus <span class="text-white"> +{{ characters.weapon2_bonus }} </span></strong>
@@ -132,7 +132,7 @@
             {% if characters.weapon_3 %}
             <div class="grid grid-cols-1">
                 <div class="cols-span-3">
-            <div class="text-xs sm:text-md lg:text-lg xl:text-xl text-center bg-green-900 pl-6 grid grid-cols-3 col-span-3 rounded-xl">
+            <div class="text-xs sm:text-md lg:text-lg xl:text-xl text-center bg-green-900 grid grid-cols-3 col-span-3 rounded-xl">
                <strong class="text-yellow-500">Weapon<span class="text-white"> {{ characters.weapon_3 }} </span></strong>
                <strong class="text-yellow-500">Damage<span class="text-white"> {{ characters.weapon_3.damage }} </span></strong>
                <strong class="text-yellow-500">Bonus <span class="text-white"> +{{ characters.weapon3_bonus }} </span></strong>
