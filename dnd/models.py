@@ -180,6 +180,17 @@ class Character_Sheet(models.Model):
     spell9 = models.ForeignKey(Spell, related_name='spell9', on_delete=models.CASCADE, blank=True, null=True)
     spell10 = models.ForeignKey(Spell, related_name='spell10', on_delete=models.CASCADE, blank=True, null=True)
 
+    spell_link = models.URLField(max_length=200, blank=True, null=True)
+    spell_link2 = models.URLField(max_length=200, blank=True, null=True)
+    spell_link3 = models.URLField(max_length=200, blank=True, null=True)
+    spell_link4 = models.URLField(max_length=200, blank=True, null=True)
+    spell_link5 = models.URLField(max_length=200, blank=True, null=True)
+    spell_link6 = models.URLField(max_length=200, blank=True, null=True)
+    spell_link7 = models.URLField(max_length=200, blank=True, null=True)
+    spell_link8 = models.URLField(max_length=200, blank=True, null=True)
+    spell_link9 = models.URLField(max_length=200, blank=True, null=True)
+    spell_link10 = models.URLField(max_length=200, blank=True, null=True)
+
 
     pictures = models.URLField(max_length=200, blank=True, null=True)
     class Meta:
