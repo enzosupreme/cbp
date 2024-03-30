@@ -78,3 +78,19 @@ def character_detail(request, pk):
         'characters': characters,
 
     })
+
+def spell_list(request):
+    spells = Spell.objects.all()
+
+    return render(request, 'dnd/spell_list.html', {
+        'spells':spells,
+    })
+
+def spell_description(request, pk):
+    spells = get_object_or_404(Spell, pk=pk)
+
+
+    return render(request, 'dnd/spell_description.html', {
+        'spells': spells,
+
+    })

@@ -120,7 +120,7 @@ class Weapon(models.Model):
 
 class Spell(models.Model):
     name = models.CharField(max_length=255)
-    damage = models.TextField(max_length=2055)
+    description = models.TextField(max_length=2055)
 
     class Meta:
         ordering = ('name',)
