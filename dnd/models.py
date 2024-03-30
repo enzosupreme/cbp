@@ -117,6 +117,16 @@ class Weapon(models.Model):
         verbose_name_plural = 'weapons'
     def __str__(self):
         return self.name
+
+class Spell(models.Model):
+    name = models.CharField(max_length=255)
+    damage = models.TextField(max_length=2055)
+
+    class Meta:
+        ordering = ('name',)
+        verbose_name_plural = 'spells'
+    def __str__(self):
+        return self.name
 class Character_Sheet(models.Model):
     race = models.ForeignKey(Race, related_name='character', on_delete=models.CASCADE)
     skill_class = models.ForeignKey(Skill_Class, related_name='character', on_delete=models.CASCADE, null=True)
@@ -158,6 +168,17 @@ class Character_Sheet(models.Model):
     skill_6 = models.ForeignKey(Skill, related_name='skill6', on_delete=models.CASCADE, blank=True, null=True)
     skill_7 = models.ForeignKey(Skill, related_name='skill7', on_delete=models.CASCADE, blank=True, null=True)
     skill_8 = models.ForeignKey(Skill, related_name='skill8', on_delete=models.CASCADE, blank=True, null=True)
+
+    spell = models.ForeignKey(Spell, related_name='spell', on_delete=models.CASCADE, blank=True, null=True)
+    spell2 = models.ForeignKey(Spell, related_name='spell2', on_delete=models.CASCADE, blank=True, null=True)
+    spell3 = models.ForeignKey(Spell, related_name='spell3', on_delete=models.CASCADE, blank=True, null=True)
+    spell4 = models.ForeignKey(Spell, related_name='spell4', on_delete=models.CASCADE, blank=True, null=True)
+    spell5 = models.ForeignKey(Spell, related_name='spell5', on_delete=models.CASCADE, blank=True, null=True)
+    spell6 = models.ForeignKey(Spell, related_name='spell6', on_delete=models.CASCADE, blank=True, null=True)
+    spell7 = models.ForeignKey(Spell, related_name='spell7', on_delete=models.CASCADE, blank=True, null=True)
+    spell8 = models.ForeignKey(Spell, related_name='spell8', on_delete=models.CASCADE, blank=True, null=True)
+    spell9 = models.ForeignKey(Spell, related_name='spell9', on_delete=models.CASCADE, blank=True, null=True)
+    spell10 = models.ForeignKey(Spell, related_name='spell10', on_delete=models.CASCADE, blank=True, null=True)
 
 
     pictures = models.URLField(max_length=200, blank=True, null=True)

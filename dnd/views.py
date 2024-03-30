@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import NonPlayerCharacter, Affiliation, Character_Sheet,Skill_Class, Weapon, Skill, Race
+from .models import NonPlayerCharacter, Affiliation, Character_Sheet,Skill_Class, Weapon, Skill, Race, Spell
 
 from .forms import NewCharacterForm
 
@@ -59,6 +59,7 @@ def Character(request):
     skill = Skill.objects.all()
     race = Race.objects.all()
     weapon = Weapon.objects.all()
+    spells = Spell.objects.all()
 
     return render(request, 'dnd/characters.html', {
         'characters':characters,
@@ -66,6 +67,7 @@ def Character(request):
         'skill':skill,
         'race':race,
         'weapon':weapon,
+        'spells':spells,
     })
 
 def character_detail(request, pk):
