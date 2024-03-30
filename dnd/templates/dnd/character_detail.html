@@ -12,9 +12,9 @@
         </div>
 
         <div class="text-xs sm:text-md lg:text-lg xl:text-xl text-center mb-4 bg-green-900 grid grid-cols-3 rounded-xl">
-               <strong class="p-1 bg-green-900 rounded-xl text-yellow-600">Name:<span class="pl-1 text-white"> {{ characters.character_name }} </span></strong>
-               <strong class="p-1 bg-green-900 rounded-xl text-yellow-600">Race<span class="pl-1 text-white"> {{ characters.race }} </span></strong>
-               <strong class="p-1 bg-green-900 rounded-xl text-yellow-600">Class:<span class="pl-1 text-white"> {{ characters.skill_class }} </span></strong>
+               <strong class="p-1 bg-green-900 rounded-xl text-yellow-600">{{ characters.character_name }}</strong>
+               <strong class="p-1 bg-green-900 rounded-xl text-yellow-600">{{ characters.race }}</strong>
+               <strong class="p-1 bg-green-900 rounded-xl text-yellow-600">{{ characters.skill_class }}</strong>
         </div>
         <div class="pl-6 cols-span-3">
 
@@ -132,7 +132,7 @@
             {% if characters.weapon_3 %}
             <div class="grid grid-cols-1">
 
-            <div class="text-xs sm:text-md lg:text-lg xl:text-xl text-center bg-green-900 grid grid-cols-1 rounded-xl">
+            <div class="pl-1 text-xs sm:text-md lg:text-lg xl:text-xl text-center bg-green-900 grid grid-cols-1 rounded-xl">
                <strong class="text-yellow-500">Weapon<span class="text-white"> {{ characters.weapon_3 }} </span></strong>
                <strong class="text-yellow-500">Damage<span class="text-white"> {{ characters.weapon_3.damage }} </span></strong>
                <strong class="text-yellow-500">Bonus <span class="text-white"> +{{ characters.weapon3_bonus }} </span></strong>
