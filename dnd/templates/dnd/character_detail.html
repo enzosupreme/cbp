@@ -11,7 +11,13 @@
         <h1 class="pl-2 text-xs sm:text-md lg:text-lg xl:text-xl text-center text-yellow-500 hover:text-yellow-700">{{ characters.name }}</h1></a>
         </div>
 
-        <div class="text-xs sm:text-md lg:text-lg xl:text-xl text-center mb-1 bg-green-900 grid grid-cols-3 rounded-xl">
+        <div class="text-xs sm:text-md lg:text-lg xl:text-xl text-center bg-green-900 grid grid-cols-3 rounded-xl">
+               <h1 class="p-1 bg-green-900 rounded-xl text-yellow-700">Name</h1>
+               <h1 class="p-1 bg-green-900 rounded-xl text-yellow-700">Race</h1>
+               <h1 class="p-1 bg-green-900 rounded-xl text-yellow-700">Class</h1>
+        </div>
+
+        <div class="text-xs sm:text-md lg:text-lg xl:text-xl text-center bg-green-900 grid grid-cols-3 rounded-xl">
                <strong class="p-1 bg-green-900 rounded-xl text-white">{{ characters.character_name }}</strong>
                <strong class="p-1 bg-green-900 rounded-xl text-white">{{ characters.race }}</strong>
                <strong class="p-1 bg-green-900 rounded-xl text-white">{{ characters.skill_class }}</strong>
@@ -112,7 +118,7 @@
         <strong class="text-yellow-800">Stats:</strong><br>
         <div class="px-3 text-xs sm:text-md lg:text-lg xl:text-xl text-center mb-2 mt-2 bg-green-900 rounded-xl">
                <strong class="bg-black rounded-xl text-yellow-600 pl-6">HP:<span class="p-2 text-white rounded-xl"> {{ characters.hp }} </span></strong>
-               <strong class="bg-black rounded-xl text-yellow-600 pl-6">AC:<span class="p-2 text-white"> {{ characters.ac }} </span></strong>
+               <strong class="bg-black rounded-xl text-yellow-600 pl-6">AC:<span class="p-2 text-white"> {{ characters.ac }} </span></strong><br>
                <strong class="bg-black rounded-xl text-yellow-600 pl-6">Level:<span class="p-2 text-white"> {{ characters.lvl }} </span></strong>
         </div>
 
