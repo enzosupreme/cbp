@@ -1,0 +1,147 @@
+{% extends 'core/base.html' %}
+
+{% block title %}{{ characters.name }}{% endblock %}
+
+{% block content %}
+
+    <div class=" p-3 bg-green-900 rounded-xl">
+        <div class=" grid grid-cols-1 gap-6 p-6">
+
+        <a href="{{ characters.pictures }}">
+        <h1 class="pl-2text-xs sm:text-md lg:text-lg xl:text-xl text-center text-yellow-500 hover:text-yellow-700">{{ characters.name }}</h1></a>
+        </div>
+
+        <div class="mb-4 bg-green-900 pl-6 grid grid-cols-3 rounded-xl">
+               <strong class="p-1 bg-green-900 rounded-xl text-yellow-600">Character:<span class="pl-6 text-white"> {{ characters.character_name }} </span></strong>
+               <strong class="p-1 bg-green-900 rounded-xl text-yellow-600">Race<span class="pl-6 text-white"> {{ characters.race }} </span></strong>
+               <strong class="p-1 bg-green-900 rounded-xl text-yellow-600">Class:<span class="pl-6 text-white"> {{ characters.skill_class }} </span></strong>
+        </div>
+        <div class="pl-6 cols-span-3">
+
+            <div class="mb-6 p-3 justify-center items-center bg-black rounded-xl col-span-1">
+
+               <strong class="pl-4 text-yellow-500">Strength:<span class="pl-6 text-white"> {{ characters.str }} </span></strong>
+               <strong class="pl-4 text-yellow-500">Dexterity<span class="pl-6 text-white"> {{ characters.dex }} </span></strong>
+               <strong class="pl-4 text-yellow-500">Constitution:<span class="pl-6 text-white"> {{ characters.con }} </span></strong>
+               <strong class="pl-4 text-yellow-500">Intelligence:<span class="pl-6 text-white"> {{ characters.int }} </span></strong>
+               <strong class="pl-4 text-yellow-500">Wisdom:<span class="pl-6 text-white"> {{ characters.wis }} </span></strong>
+               <strong class="pl-4 text-yellow-500">Charisma:<span class="pl-6 text-white"> {{ characters.cha }} </span></strong>
+
+            </div>
+        </div>
+
+            <div class="grid grid-cols-3">
+
+            <img src="{{ characters.image.url }}" class="pl-3 justify-center cols-span-1 pr-3 mb-2 rounded-xl">
+
+             <div class="grid grid-cols-1 justify-center px-8 cols-span-1 p-2 rounded-xl">
+            <div class=" bg-black pl-6 col-span-1 rounded-xl">
+                <strong class=" text-yellow-500">Proficient Skills:</strong><br>
+                {% if characters.proficient_skill %}
+                <h1 class="text-white"> {{ characters.proficient_skill }}</h1>
+                {% endif %}
+                {% if characters.skill_2 %}
+                <h1 class="text-white"> {{ characters.skill_2 }}</h1>
+                {% endif %}
+                {% if characters.skill_3 %}
+                <h1 class="text-white"> {{ characters.skill_3 }}</h1>
+                {% endif %}
+                {% if characters.skill_4 %}
+                <h1 class="text-white"> {{ characters.skill_4 }}</h1>
+                {% endif %}
+                {% if characters.skill_5 %}
+                <h1 class="text-white"> {{ characters.skill_5 }}</h1>
+                {% endif %}
+                {% if characters.skill_6 %}
+                <h1 class="text-white"> {{ characters.skill_6 }}</h1>
+                {% endif %}
+                {% if characters.skill_7 %}
+                <h1 class="text-white"> {{ characters.skill_7 }}</h1>
+                {% endif %}
+                {% if characters.skill_8 %}
+                <h1 class="text-white"> {{ characters.skill_8 }}</h1>
+                {% endif %}
+
+            </div>
+                </div>
+
+            <div class="grid grid-cols-1 justify-center px-8 p-2 rounded-xl">
+            <div class=" bg-black pl-6 col-span-1 rounded-xl">
+                <strong class="text-yellow-500">Spells & Abilities:</strong><br>
+                {% if characters.proficient_skill %}
+                <h1 class="text-white"> {{ characters.proficient_skill }}</h1>
+                {% endif %}
+                {% if characters.skill_2 %}
+                <h1 class="text-white"> {{ characters.skill_2 }}</h1>
+                {% endif %}
+                {% if characters.skill_3 %}
+                <h1 class="text-white"> {{ characters.skill_3 }}</h1>
+                {% endif %}
+                {% if characters.skill_4 %}
+                <h1 class="text-white"> {{ characters.skill_4 }}</h1>
+                {% endif %}
+                {% if characters.skill_5 %}
+                <h1 class="text-white"> {{ characters.skill_5 }}</h1>
+                {% endif %}
+                {% if characters.skill_6 %}
+                <h1 class="text-white"> {{ characters.skill_6 }}</h1>
+                {% endif %}
+                {% if characters.skill_7 %}
+                <h1 class="text-white"> {{ characters.skill_7 }}</h1>
+                {% endif %}
+                {% if characters.skill_8 %}
+                <h1 class="text-white"> {{ characters.skill_8 }}</h1>
+                {% endif %}
+
+            </div>
+                </div>
+            </div>
+        <strong class="text-yellow-800">Stats:</strong><br>
+        <div class="mb-2 mt-2 bg-green-900 grid grid-cols-3 gap-20 rounded-xl">
+               <strong class="bg-black rounded-xl text-yellow-600 pl-6">HP:<span class="pl-20 text-white rounded-xl"> {{ characters.hp }} </span></strong>
+               <strong class="bg-black rounded-xl text-yellow-600 pl-6">AC:<span class="pl-20 text-white"> {{ characters.ac }} </span></strong>
+               <strong class="bg-black rounded-xl text-yellow-600 pl-6">Level:<span class="pl-20 text-white"> {{ characters.lvl }} </span></strong>
+        </div>
+
+            <div class="mb-3 grid grid-cols-1">
+
+            <strong class="text-yellow-800">Weapons:</strong><br>
+
+            <div class="bg-green-900 rounded-xl">
+            <div class="grid grid-cols-1">
+                <div class="cols-span-3">
+            <div class=" bg-green-900 pl-6 grid grid-cols-3 col-span-3 rounded-xl">
+               <strong class="text-yellow-500">Weapon<span class="text-white"> {{ characters.weapon }} </span></strong>
+               <strong class="text-yellow-500">Damage<span class="text-white"> {{ characters.weapon.damage }} </span></strong>
+               <strong class="text-yellow-500">Bonus <span class="text-white"> +{{ characters.weapon_bonus }} </span></strong>
+            </div>
+                </div>
+
+            {% if characters.weapon_2 %}
+            <div class="grid grid-cols-1">
+                <div class="cols-span-3">
+            <div class="bg-green-900 pl-6 grid grid-cols-3 col-span-3 rounded-xl">
+               <strong class="text-yellow-500">Weapon<span class="text-white"> {{ characters.weapon_2 }} </span></strong>
+               <strong class="text-yellow-500">Damage<span class="text-white"> {{ characters.weapon_2.damage }} </span></strong>
+               <strong class="text-yellow-500">Bonus <span class="text-white"> +{{ characters.weapon2_bonus }} </span></strong>
+            </div>
+                </div>
+                </div>
+                {% endif %}
+
+            {% if characters.weapon_3 %}
+            <div class="grid grid-cols-1">
+                <div class="cols-span-3">
+            <div class="bg-green-900 pl-6 grid grid-cols-3 col-span-3 rounded-xl">
+               <strong class="text-yellow-500">Weapon<span class="text-white"> {{ characters.weapon_3 }} </span></strong>
+               <strong class="text-yellow-500">Damage<span class="text-white"> {{ characters.weapon_3.damage }} </span></strong>
+               <strong class="text-yellow-500">Bonus <span class="text-white"> +{{ characters.weapon3_bonus }} </span></strong>
+            </div>
+                </div>
+                </div>
+                {% endif %}
+            </div>
+            </div>
+
+
+{% endblock %}

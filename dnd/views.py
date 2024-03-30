@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import NonPlayerCharacter, Affiliation
+from .models import NonPlayerCharacter, Affiliation, Character_Sheet,Skill_Class, Weapon, Skill, Race
 
 from .forms import NewCharacterForm
 
@@ -49,4 +49,30 @@ def new(request):
     return render(request, 'dnd/form.html', {
         'form': form,
         'title': 'New Character'
+    })
+
+
+def Character(request):
+
+    characters = Character_Sheet.objects.filter(invisible=False)
+    skill_class = Skill_Class.objects.all()
+    skill = Skill.objects.all()
+    race = Race.objects.all()
+    weapon = Weapon.objects.all()
+
+    return render(request, 'dnd/characters.html', {
+        'characters':characters,
+        'skill_class':skill_class,
+        'skill':skill,
+        'race':race,
+        'weapon':weapon,
+    })
+
+def character_detail(request, pk):
+    characters = get_object_or_404(Character_Sheet, pk=pk)
+
+
+    return render(request, 'dnd/character_detail.html', {
+        'characters': characters,
+
     })

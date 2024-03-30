@@ -1,22 +1,22 @@
 {% extends 'core/base.html' %}
 
-{% block title %}Non Player Characters{% endblock %}
+{% block title %}Characters Sheets{% endblock %}
 {% block content %}
 
 
     <div class="mt-2 mb-20 px-3 py-12 bg-black rounded-xl">
 
         <div class="grid grid-cols-2 gap-3">
-            {% for npc in npcs %}
+            {% for character in characters %}
             <div>
-                <a href="{% url 'dnd:detail' npc.id %}">
+                <a href="{% url 'dnd:character_detail' character.id %}">
                     <div>
-                        <img src="{{ npc.image.url }}" class="object-contain rounded-t-xl">
+                        <img src="{{ character.image.url }}" class="object-contain rounded-t-xl">
                     </div>
 
                     <div class="p-3 bg-green-900 rounded-b-xl">
 
-                        <h2 class="text-sm sm:text-sm lg:text-lg xl:text-xl text-yellow-600 hover:text-white">{{ npc.name }}
+                        <h2 class="text-sm sm:text-sm lg:text-lg xl:text-xl text-yellow-600 hover:text-white">{{ character.name }}
 
                         </h2>
 
@@ -26,6 +26,5 @@
             {% endfor %}
         </div>
     </div>
-
 
 {% endblock %}

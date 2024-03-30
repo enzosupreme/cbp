@@ -80,6 +80,8 @@ class Enemy(models.Model):
     image4 = models.ImageField(upload_to='project_images', blank=True, null=True)
     invisible = models.BooleanField(default=False)
 
+
+
     pictures = models.URLField(max_length=200, blank=True, null=True)
     class Meta:
         ordering = ('name',)
@@ -87,6 +89,83 @@ class Enemy(models.Model):
     def __str__(self):
         return self.name
 
+class Skill(models.Model):
+    name = models.CharField(max_length=255)
+
+    class Meta:
+        ordering = ('name',)
+        verbose_name_plural = 'skills'
+    def __str__(self):
+        return self.name
+
+class Skill_Class(models.Model):
+    name = models.CharField(max_length=255)
+
+    class Meta:
+        ordering = ('name',)
+        verbose_name_plural = 'classes'
+    def __str__(self):
+        return self.name
+
+class Weapon(models.Model):
+    name = models.CharField(max_length=255)
+    damage = models.CharField(max_length=255)
+
+
+    class Meta:
+        ordering = ('name',)
+        verbose_name_plural = 'weapons'
+    def __str__(self):
+        return self.name
+class Character_Sheet(models.Model):
+    race = models.ForeignKey(Race, related_name='character', on_delete=models.CASCADE)
+    skill_class = models.ForeignKey(Skill_Class, related_name='character', on_delete=models.CASCADE, null=True)
+    name = models.CharField(max_length=255, blank=True, null=True)
+    character_name = models.CharField(max_length=255, blank=True, null=True)
+    lvl = models.IntegerField(null=True)
+    inspiration = models.IntegerField(null=True, blank=True)
+    proficiency = models.IntegerField(null=True, blank=True)
+    personality_traits = models.TextField(blank=True, null=True)
+    ideals = models.TextField(blank=True, null=True)
+    bonds = models.TextField(blank=True, null=True)
+    flaws = models.TextField(blank=True, null=True)
+    hp = models.IntegerField(null=True,)
+    str = models.IntegerField(null=True,)
+    dex = models.IntegerField(null=True,)
+    con = models.IntegerField(null=True,)
+    int = models.IntegerField(null=True,)
+    wis = models.IntegerField(null=True,)
+    cha = models.IntegerField(null=True,)
+    ac = models.IntegerField(null=True,)
+    speed = models.CharField(max_length=255, blank=True, null=True)
+    equipment = models.TextField(blank=True, null=True)
+    weapon = models.ForeignKey(Weapon, related_name='weapon', on_delete=models.CASCADE, blank=True, null=True)
+    weapon_bonus = models.IntegerField(null=True, blank=True)
+    weapon_2 = models.ForeignKey(Weapon, related_name='weapon2', on_delete=models.CASCADE, blank=True, null=True)
+    weapon2_bonus = models.IntegerField(null=True, blank=True)
+    weapon_3 = models.ForeignKey(Weapon, related_name='weapon3', on_delete=models.CASCADE, blank=True, null=True)
+    weapon3_bonus = models.IntegerField(null=True, blank=True)
+    image = models.ImageField(upload_to='project_images', blank=True, null=True)
+    image2 = models.ImageField(upload_to='project_images', blank=True, null=True)
+    image3 = models.ImageField(upload_to='project_images', blank=True, null=True)
+    image4 = models.ImageField(upload_to='project_images', blank=True, null=True)
+    invisible = models.BooleanField(default=False)
+    proficient_skill = models.ForeignKey(Skill, related_name='skill', on_delete=models.CASCADE, blank=True, null=True)
+    skill_2 = models.ForeignKey(Skill, related_name='skill2', on_delete=models.CASCADE, blank=True, null=True)
+    skill_3 = models.ForeignKey(Skill, related_name='skill3', on_delete=models.CASCADE, blank=True, null=True)
+    skill_4 = models.ForeignKey(Skill, related_name='skill4', on_delete=models.CASCADE, blank=True, null=True)
+    skill_5 = models.ForeignKey(Skill, related_name='skill5', on_delete=models.CASCADE, blank=True, null=True)
+    skill_6 = models.ForeignKey(Skill, related_name='skill6', on_delete=models.CASCADE, blank=True, null=True)
+    skill_7 = models.ForeignKey(Skill, related_name='skill7', on_delete=models.CASCADE, blank=True, null=True)
+    skill_8 = models.ForeignKey(Skill, related_name='skill8', on_delete=models.CASCADE, blank=True, null=True)
+
+
+    pictures = models.URLField(max_length=200, blank=True, null=True)
+    class Meta:
+        ordering = ('name',)
+        verbose_name_plural = 'Character_Sheets'
+    def __str__(self):
+        return self.name
 
 
 class Character(models.Model):
