@@ -16,19 +16,6 @@
                <strong class="p-1 bg-green-900 rounded-xl text-white">{{ characters.race }}</strong>
                <strong class="p-1 bg-green-900 rounded-xl text-white">{{ characters.skill_class }}</strong>
         </div>
-        <div class="pl-6 cols-span-3">
-
-            <div class="text-xs sm:text-md lg:text-lg xl:text-xl text-center mb-2 p-3 justify-center items-center bg-black rounded-xl col-span-1">
-
-               <strong class="pl-4 text-yellow-500">Strength:<span class="p-2 text-white">{{ characters.str }} </span></strong>
-               <strong class="pl-4 text-yellow-500">Dexterity<span class="p-2 text-white">{{ characters.dex }} </span></strong>
-               <strong class="pl-4 text-yellow-500">Constitution:<span class="p-2 text-white"> {{ characters.con }} </span></strong>
-               <strong class="pl-4 text-yellow-500">Intelligence:<span class="p-2 text-white"> {{ characters.int }} </span></strong>
-               <strong class="pl-4 text-yellow-500">Wisdom:<span class="p-2 text-white"> {{ characters.wis }} </span></strong>
-               <strong class="pl-4 text-yellow-500">Charisma:<span class="p-2 text-white"> {{ characters.cha }} </span></strong>
-
-            </div>
-        </div>
 
         <div class="grid grid-cols-1 "><img src="{{ characters.image.url }}" class="cols-span-1 mb-2 rounded-xl"></div>
 
@@ -101,6 +88,20 @@
                <strong class="bg-black rounded-xl text-yellow-600 pl-6">HP:<span class="p-2 text-white rounded-xl"> {{ characters.hp }} </span></strong>
                <strong class="bg-black rounded-xl text-yellow-600 pl-6">AC:<span class="p-2 text-white"> {{ characters.ac }} </span></strong>
                <strong class="bg-black rounded-xl text-yellow-600 pl-6">Level:<span class="p-2 text-white"> {{ characters.lvl }} </span></strong>
+        </div>
+
+        <div class="pl-6 cols-span-3">
+
+            <div class="text-xs sm:text-md lg:text-lg xl:text-xl text-center mb-2 p-3 justify-center items-center bg-black rounded-xl col-span-1">
+
+               <strong class="pl-4 text-yellow-500">Strength:<span class="p-2 text-white">{{ characters.str }} </span></strong>
+               <strong class="pl-4 text-yellow-500">Dexterity<span class="p-2 text-white">{{ characters.dex }} </span></strong>
+               <strong class="pl-4 text-yellow-500">Constitution:<span class="p-2 text-white"> {{ characters.con }} </span></strong>
+               <strong class="pl-4 text-yellow-500">Intelligence:<span class="p-2 text-white"> {{ characters.int }} </span></strong>
+               <strong class="pl-4 text-yellow-500">Wisdom:<span class="p-2 text-white"> {{ characters.wis }} </span></strong>
+               <strong class="pl-4 text-yellow-500">Charisma:<span class="p-2 text-white"> {{ characters.cha }} </span></strong>
+
+            </div>
         </div>
 
             <div class="mb-3 grid grid-cols-1 gap-2">
