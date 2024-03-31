@@ -1,7 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import NonPlayerCharacter, Affiliation, Character_Sheet,Skill_Class, Weapon, Skill, Race, Spell
-
+from .models import NonPlayerCharacter, Affiliation, Character_Sheet,Skill_Class, Weapon, Skill, Race, Spell, DM_Menu
 from .forms import NewCharacterForm
 
 
@@ -93,4 +92,11 @@ def spell_description(request, pk):
     return render(request, 'dnd/spell_description.html', {
         'spells': spells,
 
+    })
+
+def dm_items(request):
+    dm_items = DM_Menu.objects.all()
+
+    return render(request, 'dnd/dm.html', {
+        'dm_items':dm_items
     })

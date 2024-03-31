@@ -120,13 +120,25 @@ class Weapon(models.Model):
 
 class Spell(models.Model):
     name = models.CharField(max_length=255)
-    description = models.TextField(max_length=2055)
+    description = models.TextField(max_length=4088)
 
     class Meta:
         ordering = ('name',)
         verbose_name_plural = 'spells'
     def __str__(self):
         return self.name
+
+class DM_Menu(models.Model):
+    name = models.CharField(max_length=255)
+    link = models.URLField(max_length=200, blank=True, null=True)
+
+    class Meta:
+        ordering = ('name',)
+        verbose_name_plural = 'dm options'
+
+    def __str__(self):
+        return self.name
+
 class Character_Sheet(models.Model):
     race = models.ForeignKey(Race, related_name='character', on_delete=models.CASCADE)
     skill_class = models.ForeignKey(Skill_Class, related_name='character', on_delete=models.CASCADE, null=True)

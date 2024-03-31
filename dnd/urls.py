@@ -10,6 +10,7 @@ urlpatterns = [
     path('spell_list/', views.spell_list, name='spells'),
     path('new/', views.new, name='new'),
     path('npcs/<int:pk>/', views.detail, name='detail'),
+    path('dm/', views.dm_items, name='dm_items'),
     path('characters/<int:pk>/', views.character_detail, name='character_detail'),
     path('spells/<int:pk>/', views.spell_description, name='spell_description'),
 
