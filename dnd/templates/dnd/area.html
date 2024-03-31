@@ -1,0 +1,41 @@
+{% extends 'core/base.html' %}
+
+{% block title %}{{ area.name }}{% endblock %}
+
+{% block content %}
+
+    <div class="p-6 bg-green-900 rounded-xl bg-green-800">
+        <div class=" grid grid-cols-1 gap-4">
+        <h1 class="pl-2 text-xs sm:text-md lg:text-lg xl:text-xl text-center text-yellow-500 ">{{ areas.name }}</h1>
+        </div>
+        <div class=" grid grid-cols-1 p-3 ">
+            <img src="{{ areas.image.url }}" class="mb-8 rounded-xl">
+            {% if areas.image2 %}
+            <img src="{{ areas.image2.url }}" class="mb-8 rounded-xl">
+            {% endif %}
+            {% if areas.image3 %}
+            <img src="{{ areas.image3.url }}" class="mb-8 rounded-xl">
+            {% endif %}
+            {% if areas.image4 %}
+            <img src="{{ areas.image4.url }}" class="mb-8 rounded-xl">
+            {% endif %}
+            {% if areas.image5 %}
+            <img src="{{ areas.image5.url }}" class="mb-8 rounded-xl">
+            {% endif %}
+            {% if areas.image6 %}
+            <img src="{{ areas.image6.url }}" class="mb-8 rounded-xl">
+            {% endif %}
+            {% if areas.image6 %}
+            <img src="{{ areas.image7.url }}" class="mb-8 rounded-xl">
+            {% endif %}
+            {% if areas.image7 %}
+            <img src="{{ areas.image7.url }}" class="mb-8 rounded-xl">
+            {% endif %}
+            {% if areas.image8 %}
+            <img src="{{ areas.image8.url }}" class="mb-8 rounded-xl">
+            {% endif %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

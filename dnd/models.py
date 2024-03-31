@@ -134,7 +134,27 @@ class DM_Menu(models.Model):
 
     class Meta:
         ordering = ('name',)
-        verbose_name_plural = 'dm options'
+        verbose_name_plural = 'dm Options'
+
+    def __str__(self):
+        return self.name
+
+class Map(models.Model):
+    name = models.CharField(max_length=255)
+    image = models.ImageField(upload_to='project_images', blank=True, null=True)
+    image2 = models.ImageField(upload_to='project_images', blank=True, null=True)
+    image3 = models.ImageField(upload_to='project_images', blank=True, null=True)
+    image4 = models.ImageField(upload_to='project_images', blank=True, null=True)
+    image5 = models.ImageField(upload_to='project_images', blank=True, null=True)
+    image6 = models.ImageField(upload_to='project_images', blank=True, null=True)
+    image7 = models.ImageField(upload_to='project_images', blank=True, null=True)
+    image8 = models.ImageField(upload_to='project_images', blank=True, null=True)
+
+    link = models.URLField(max_length=200, blank=True, null=True)
+
+    class Meta:
+        ordering = ('name',)
+        verbose_name_plural = 'maps'
 
     def __str__(self):
         return self.name
