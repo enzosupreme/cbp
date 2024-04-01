@@ -1,8 +1,10 @@
 from django.contrib import admin
 
-from .models import Race, Affiliation, NonPlayerCharacter, Enemy, Stat, Skill, Character_Sheet, Weapon, Skill_Class, Spell, DM_Menu, Map
+from .models import Race, Affiliation, NonPlayerCharacter, Enemy, Stat, Skill, Character_Sheet, Weapon, Skill_Class, Spell, DM_Menu, Map, Treasure, Monster
 
 admin.site.register(Race)
+admin.site.register(Monster)
+admin.site.register(Treasure)
 admin.site.register(Map)
 admin.site.register(Spell)
 admin.site.register(DM_Menu)

@@ -138,7 +138,15 @@ class DM_Menu(models.Model):
 
     def __str__(self):
         return self.name
+class Monster(models.Model):
+    name = models.CharField(max_length=255)
+    link = models.URLField(max_length=200, blank=True, null=True)
 
+    class Meta:
+        ordering = ('name',)
+        verbose_name_plural = 'monsters'
+    def __str__(self):
+        return self.name
 class Map(models.Model):
     name = models.CharField(max_length=255)
     image = models.ImageField(upload_to='project_images', blank=True, null=True)
@@ -150,8 +158,14 @@ class Map(models.Model):
     image7 = models.ImageField(upload_to='project_images', blank=True, null=True)
     image8 = models.ImageField(upload_to='project_images', blank=True, null=True)
 
-    link = models.URLField(max_length=200, blank=True, null=True)
 
+    link = models.URLField(max_length=200, blank=True, null=True)
+    monsters1 = models.ForeignKey(Monster, related_name='monster', on_delete=models.CASCADE, blank=True, null=True)
+    monsters2 = models.ForeignKey(Monster, related_name='monster2', on_delete=models.CASCADE, null=True, blank=True)
+    monsters3 = models.ForeignKey(Monster, related_name='monster3', on_delete=models.CASCADE, null=True, blank= True)
+    monsters4 = models.ForeignKey(Monster, related_name='monster4', on_delete=models.CASCADE, null=True, blank=True)
+    monsters5 = models.ForeignKey(Monster, related_name='monster5', on_delete=models.CASCADE, null=True, blank=True)
+    monsters6 = models.ForeignKey(Monster, related_name='monster6', on_delete=models.CASCADE, null=True, blank=True)
     class Meta:
         ordering = ('name',)
         verbose_name_plural = 'maps'
@@ -238,3 +252,12 @@ class Character(models.Model):
     def __str__(self):
         return self.name
 
+class Treasure(models.Model):
+    name = models.CharField(max_length=255)
+    description = models.TextField(max_length=4088)
+
+    class Meta:
+        ordering = ('name',)
+        verbose_name_plural = 'treasures'
+    def __str__(self):
+        return self.name
