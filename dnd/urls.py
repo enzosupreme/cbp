@@ -11,6 +11,7 @@ urlpatterns = [
     path('new/', views.new, name='new'),
     path('npcs/<int:pk>/', views.detail, name='detail'),
     path('dm/', views.dm_items, name='dm_items'),
+    path('monsters/', views.monster, name='monsters'),
     path('maps/', views.maps, name='maps'),
     path('area/<int:pk>/', views.area, name='areas'),
     path('characters/<int:pk>/', views.character_detail, name='character_detail'),

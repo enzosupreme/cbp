@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import NonPlayerCharacter, Affiliation, Character_Sheet,Skill_Class, Weapon, Skill, Race, Spell, DM_Menu, Map
+from .models import NonPlayerCharacter, Affiliation, Character_Sheet,Skill_Class, Weapon, Skill, Race, Spell, DM_Menu, Map, Monster
 from .forms import NewCharacterForm
 
 
@@ -113,4 +113,11 @@ def area(request, pk):
     return render(request, 'dnd/area.html', {
         'areas': areas,
 
+    })
+
+def monster(request):
+    monsters = Monster.objects.all()
+
+    return render(request, 'dnd/monsters.html', {
+        'monsters':monsters
     })
