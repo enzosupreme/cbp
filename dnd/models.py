@@ -166,6 +166,8 @@ class Map(models.Model):
     monsters4 = models.ForeignKey(Monster, related_name='monster4', on_delete=models.CASCADE, null=True, blank=True)
     monsters5 = models.ForeignKey(Monster, related_name='monster5', on_delete=models.CASCADE, null=True, blank=True)
     monsters6 = models.ForeignKey(Monster, related_name='monster6', on_delete=models.CASCADE, null=True, blank=True)
+
+    description = models.TextField(blank=True, null=True)
     class Meta:
         ordering = ('name',)
         verbose_name_plural = 'maps'
