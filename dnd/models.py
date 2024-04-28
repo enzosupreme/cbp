@@ -227,6 +227,14 @@ class Character_Sheet(models.Model):
     spell8 = models.ForeignKey(Spell, related_name='spell8', on_delete=models.CASCADE, blank=True, null=True)
     spell9 = models.ForeignKey(Spell, related_name='spell9', on_delete=models.CASCADE, blank=True, null=True)
     spell10 = models.ForeignKey(Spell, related_name='spell10', on_delete=models.CASCADE, blank=True, null=True)
+    spell11 = models.ForeignKey(Spell, related_name='spell11', on_delete=models.CASCADE, blank=True, null=True)
+    spell12 = models.ForeignKey(Spell, related_name='spell12', on_delete=models.CASCADE, blank=True, null=True)
+    spell13 = models.ForeignKey(Spell, related_name='spell13', on_delete=models.CASCADE, blank=True, null=True)
+    spell14 = models.ForeignKey(Spell, related_name='spell14', on_delete=models.CASCADE, blank=True, null=True)
+    spell15 = models.ForeignKey(Spell, related_name='spell15', on_delete=models.CASCADE, blank=True, null=True)
+    spell16 = models.ForeignKey(Spell, related_name='spell16', on_delete=models.CASCADE, blank=True, null=True)
+    spell17 = models.ForeignKey(Spell, related_name='spell17', on_delete=models.CASCADE, blank=True, null=True)
+
 
     spell_link = models.URLField(max_length=200, blank=True, null=True)
     spell_link2 = models.URLField(max_length=200, blank=True, null=True)
@@ -238,6 +246,13 @@ class Character_Sheet(models.Model):
     spell_link8 = models.URLField(max_length=200, blank=True, null=True)
     spell_link9 = models.URLField(max_length=200, blank=True, null=True)
     spell_link10 = models.URLField(max_length=200, blank=True, null=True)
+    spell_link11 = models.URLField(max_length=200, blank=True, null=True)
+    spell_link12 = models.URLField(max_length=200, blank=True, null=True)
+    spell_link13 = models.URLField(max_length=200, blank=True, null=True)
+    spell_link14 = models.URLField(max_length=200, blank=True, null=True)
+    spell_link15 = models.URLField(max_length=200, blank=True, null=True)
+    spell_link16 = models.URLField(max_length=200, blank=True, null=True)
+    spell_link17 = models.URLField(max_length=200, blank=True, null=True)
 
 
     pictures = models.URLField(max_length=200, blank=True, null=True)
