@@ -128,6 +128,7 @@ class Spell(models.Model):
     def __str__(self):
         return self.name
 
+
 class DM_Menu(models.Model):
     name = models.CharField(max_length=255)
     link = models.URLField(max_length=200, blank=True, null=True)
@@ -276,5 +277,30 @@ class Treasure(models.Model):
     class Meta:
         ordering = ('name',)
         verbose_name_plural = 'treasures'
+    def __str__(self):
+        return self.name
+
+class Rarity(models.Model):
+    name = models.CharField(max_length=255)
+
+    class Meta:
+        ordering = ('name',)
+        verbose_name_plural = 'rarities'
+    def __str__(self):
+        return self.name
+class Special_Item(models.Model):
+    name = models.CharField(max_length=255)
+    description = models.TextField(max_length=4088)
+    rarity = models.ForeignKey(Rarity, related_name='rare', on_delete=models.CASCADE, blank=True, null=True)
+    lvl1 = models.BooleanField(default=False)
+    lvl2 = models.BooleanField(default=False)
+    lvl3 = models.BooleanField(default=False)
+    lvl4 = models.BooleanField(default=False)
+    lvl5 = models.BooleanField(default=False)
+    lvl6 = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ('name',)
+        verbose_name_plural = 'special items'
     def __str__(self):
         return self.name

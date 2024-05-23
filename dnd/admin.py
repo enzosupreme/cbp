@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Race, Affiliation, NonPlayerCharacter, Enemy, Stat, Skill, Character_Sheet, Weapon, Skill_Class, Spell, DM_Menu, Map, Treasure, Monster
+from .models import Race, Affiliation, NonPlayerCharacter, Enemy, Stat, Skill, Character_Sheet, Weapon, Skill_Class, Spell, DM_Menu, Map, Treasure, Monster, Special_Item,Rarity
 
 admin.site.register(Race)
 admin.site.register(Monster)
@@ -16,5 +16,7 @@ admin.site.register(Enemy)
 admin.site.register(Affiliation)
 admin.site.register(Character_Sheet)
 admin.site.register(NonPlayerCharacter)
+admin.site.register(Special_Item)
+admin.site.register(Rarity)
 
 

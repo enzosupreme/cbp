@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+
+{% block title %}{{ special_items.name }}{% endblock %}
+
+{% block content %}
+
+    <div class="p-6 bg-green-900 rounded-xl bg-green-800">
+        <div class=" grid grid-cols-1 gap-4">
+        <h1 class="pl-2 text-xs sm:text-md lg:text-lg xl:text-xl text-center text-yellow-500 ">{{ special_items.name }}</h1>
+        </div>
+        <div class=" grid grid-cols-1 p-3 ">
+            <h2 class="text-sm sm:text-sm lg:text-lg xl:text-xl text-white">{{ special_items.description }}</h2>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
