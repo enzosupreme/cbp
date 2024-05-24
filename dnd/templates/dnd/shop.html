@@ -1,0 +1,69 @@
+{% extends 'core/base.html' %}
+
+{% block title %}{{ shoppers.name }}{% endblock %}
+{% block content %}
+
+
+    <div class="mt-2 mb-20 px-3 py-12 bg-black rounded-xl">
+
+        <div class="grid grid-cols-2 gap-3">
+
+
+
+                    <div class="col-span-2 p-3 bg-green-900 rounded-b-xl mb-4">
+
+                        <h2 class=" text-center p-4 text-sm sm:text-sm lg:text-lg xl:text-xl text-yellow-600 hover:text-white rounded-xl">{{ shoppers.name }}
+
+                        </h2>
+
+                    </div>
+            </div>
+
+
+                    <div>
+                        <img src="{{ shoppers.image.url }}" class="object-contain rounded-t-xl">
+                    </div>
+                <div class="grid grid-cols-6 gap-3 p-3 mt-3">
+                     <div class="col-span-1 p-3 bg-green-900 rounded-b-xl">
+                         <a href="{% url 'dnd:special_items' shoppers.item1.id %}">
+                        <h2 class=" text-sm sm:text-sm lg:text-lg xl:text-xl text-yellow-600 hover:text-white">{{ shoppers.item1.name }}
+                        </h2>
+                        </a>
+                    </div>
+                    <div class="col-span-1 p-3 bg-green-900 rounded-b-xl">
+                         <a href="{% url 'dnd:special_items' shoppers.item2.id %}">
+                        <h2 class=" text-sm sm:text-sm lg:text-lg xl:text-xl text-yellow-600 hover:text-white">{{ shoppers.item2.name }}
+                        </h2>
+                        </a>
+                    </div>
+                    <div class="col-span-1 p-3 bg-green-900 rounded-b-xl">
+                         <a href="{% url 'dnd:special_items' shoppers.item3.id %}">
+                        <h2 class=" text-sm sm:text-sm lg:text-lg xl:text-xl text-yellow-600 hover:text-white">{{ shoppers.item3.name }}
+                        </h2>
+                        </a>
+                    </div>
+                    <div class="col-span-1 p-3 bg-green-900 rounded-b-xl">
+                         <a href="{% url 'dnd:special_items' shoppers.item4.id %}">
+                        <h2 class=" text-sm sm:text-sm lg:text-lg xl:text-xl text-yellow-600 hover:text-white">{{ shoppers.item4.name }}
+                        </h2>
+                        </a>
+                    </div>
+                    <div class="col-span-1 p-3 bg-green-900 rounded-b-xl">
+                         <a href="{% url 'dnd:special_items' shoppers.item5.id %}">
+                        <h2 class=" text-sm sm:text-sm lg:text-lg xl:text-xl text-yellow-600 hover:text-white">{{ shoppers.item5.name }}
+                        </h2>
+                        </a>
+                    </div>
+                    <div class="col-span-1 p-3 bg-green-900 rounded-b-xl">
+                         <a href="{% url 'dnd:special_items' shoppers.item6.id %}">
+                        <h2 class=" text-sm sm:text-sm lg:text-lg xl:text-xl text-yellow-600 hover:text-white">{{ shoppers.item6.name }}
+                        </h2>
+                        </a>
+                    </div>
+
+        </div>
+
+        </div>
+    </div>
+
+{% endblock %}

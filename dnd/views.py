@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import NonPlayerCharacter, Affiliation, Character_Sheet,Skill_Class, Weapon, Skill, Race, Spell, DM_Menu, Map, Monster,Special_Item
+from .models import NonPlayerCharacter, Affiliation, Character_Sheet,Skill_Class, Weapon, Skill, Race, Spell, DM_Menu, Map, Monster,Special_Item,Shop
 from .forms import NewCharacterForm
 
 
@@ -121,52 +121,7 @@ def monster(request):
     return render(request, 'dnd/monsters.html', {
         'monsters':monsters
     })
-def level_1_shop(request):
-    shop = Special_Item.objects.filter(lvl1=True)
 
-    return render(request, 'dnd/shop1.html',{
-        'shop':shop,
-    })
-
-
-def level_2_shop(request):
-    shop = Special_Item.objects.filter(lvl2=True)
-
-    return render(request, 'dnd/shop2.html', {
-        'shop': shop,
-    })
-
-
-def level_3_shop(request):
-    shop = Special_Item.objects.filter(lvl3=True)
-
-    return render(request, 'dnd/shop3.html', {
-        'shop': shop,
-    })
-
-
-def level_4_shop(request):
-    shop = Special_Item.objects.filter(lvl4=True)
-
-    return render(request, 'dnd/shop4.html', {
-        'shop': shop,
-    })
-
-
-def level_5_shop(request):
-    shop = Special_Item.objects.filter(lvl5=True)
-
-    return render(request, 'dnd/shop5.html', {
-        'shop': shop,
-    })
-
-
-def level_6_shop(request):
-    shop = Special_Item.objects.filter(lvl6=True)
-
-    return render(request, 'dnd/shop6.html', {
-        'shop': shop,
-    })
 
 def special_items_list(request):
     items = Special_Item.objects.all()
@@ -180,5 +135,21 @@ def special_items(request, pk):
 
     return render(request, 'dnd/item.html', {
         'special_items': special_items,
+
+    })
+
+def special_shops(request):
+    shops = Shop.objects.all()
+
+    return render(request, 'dnd/shops.html',{
+        'shops':shops
+    })
+
+def shopper(request,pk):
+    shoppers = get_object_or_404(Shop,pk=pk)
+    items = Special_Item.objects.all()
+
+    return render(request, 'dnd/shop.html',{
+        'shoppers':shoppers,
 
     })

@@ -302,5 +302,23 @@ class Special_Item(models.Model):
     class Meta:
         ordering = ('name',)
         verbose_name_plural = 'special items'
+
+    def __str__(self):
+        return self.name
+
+class Shop(models.Model):
+    name = models.CharField(max_length=255)
+    image = models.ImageField(upload_to='shop_images', blank=True, null=True)
+    item1 = models.ForeignKey(Special_Item, related_name='special_items', on_delete=models.CASCADE, blank=True, null=True)
+    item2 = models.ForeignKey(Special_Item, related_name='special_items2', on_delete=models.CASCADE, blank=True,null=True)
+    item3 = models.ForeignKey(Special_Item, related_name='special_items3', on_delete=models.CASCADE, blank=True,null=True)
+    item4 = models.ForeignKey(Special_Item, related_name='special_items4', on_delete=models.CASCADE, blank=True,null=True)
+    item5 = models.ForeignKey(Special_Item, related_name='special_items5', on_delete=models.CASCADE, blank=True,null=True)
+    item6 = models.ForeignKey(Special_Item, related_name='special_items6', on_delete=models.CASCADE, blank=True,null=True)
+    item7 = models.ForeignKey(Special_Item, related_name='special_items7', on_delete=models.CASCADE, blank=True,null=True)
+
+    class Meta:
+        ordering = ('name',)
+        verbose_name_plural = 'shops'
     def __str__(self):
         return self.name

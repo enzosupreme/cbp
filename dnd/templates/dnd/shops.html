@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Shops{% endblock %}
+
+{% block content %}
+
+        <div class="grid grid-cols-2 gap-3 p-6 mb-20">
+            {% for shop in shops %}
+            <div>
+                    <a href="{% url 'dnd:shoppers' shop.id %}">
+                    <div>
+                        <h2 class="p-6 text-sm sm:text-sm lg:text-lg xl:text-xl text-white hover:text-yellow-500 bg-green-700 rounded-xl">{{ shop.name }}</h2>
+                    </div>
+                    </a>
+            </div>
+            {% endfor %}
+        </div>
+
+
+{% endblock %}
