@@ -176,6 +176,33 @@ class Map(models.Model):
     def __str__(self):
         return self.name
 
+class Rarity(models.Model):
+    name = models.CharField(max_length=255)
+
+    class Meta:
+        ordering = ('name',)
+        verbose_name_plural = 'rarities'
+    def __str__(self):
+        return self.name
+
+class Special_Item(models.Model):
+    name = models.CharField(max_length=255)
+    description = models.TextField(max_length=4088)
+    rarity = models.ForeignKey(Rarity, related_name='rare', on_delete=models.CASCADE, blank=True, null=True)
+    link = models.URLField(max_length=200, blank=True, null=True)
+    lvl1 = models.BooleanField(default=False)
+    lvl2 = models.BooleanField(default=False)
+    lvl3 = models.BooleanField(default=False)
+    lvl4 = models.BooleanField(default=False)
+    lvl5 = models.BooleanField(default=False)
+    lvl6 = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ('name',)
+        verbose_name_plural = 'special items'
+
+    def __str__(self):
+        return self.name
 class Character_Sheet(models.Model):
     race = models.ForeignKey(Race, related_name='character', on_delete=models.CASCADE)
     skill_class = models.ForeignKey(Skill_Class, related_name='character', on_delete=models.CASCADE, null=True)
@@ -255,6 +282,41 @@ class Character_Sheet(models.Model):
     spell_link16 = models.URLField(max_length=200, blank=True, null=True)
     spell_link17 = models.URLField(max_length=200, blank=True, null=True)
 
+    special_item = models.ForeignKey(Special_Item, related_name='special_item', on_delete=models.CASCADE, blank=True,
+                                      null=True)
+    special_item2 = models.ForeignKey(Special_Item, related_name='special_item2', on_delete=models.CASCADE, blank=True,
+                                      null=True)
+    special_item3 = models.ForeignKey(Special_Item, related_name='special_item3', on_delete=models.CASCADE, blank=True,
+                                      null=True)
+    special_item4 = models.ForeignKey(Special_Item, related_name='special_item4', on_delete=models.CASCADE, blank=True,
+                                      null=True)
+    special_item5 = models.ForeignKey(Special_Item, related_name='special_item5', on_delete=models.CASCADE, blank=True,
+                                      null=True)
+    special_item6 = models.ForeignKey(Special_Item, related_name='special_item6', on_delete=models.CASCADE, blank=True,
+                                      null=True)
+    special_item7 = models.ForeignKey(Special_Item, related_name='special_item7', on_delete=models.CASCADE, blank=True,
+                                      null=True)
+    special_item8 = models.ForeignKey(Special_Item, related_name='special_item8', on_delete=models.CASCADE, blank=True,
+                                      null=True)
+    special_item9 = models.ForeignKey(Special_Item, related_name='special_item9', on_delete=models.CASCADE, blank=True,
+                                      null=True)
+    special_item10 = models.ForeignKey(Special_Item, related_name='special_item0', on_delete=models.CASCADE, blank=True,
+                                       null=True)
+    special_item11 = models.ForeignKey(Special_Item, related_name='special_item11', on_delete=models.CASCADE,
+                                       blank=True, null=True)
+    special_item12 = models.ForeignKey(Special_Item, related_name='special_item12', on_delete=models.CASCADE,
+                                       blank=True, null=True)
+    special_item13 = models.ForeignKey(Special_Item, related_name='sspecial_item13', on_delete=models.CASCADE,
+                                       blank=True, null=True)
+    special_item14 = models.ForeignKey(Special_Item, related_name='special_item14', on_delete=models.CASCADE,
+                                       blank=True, null=True)
+    special_item15 = models.ForeignKey(Special_Item, related_name='special_item15', on_delete=models.CASCADE,
+                                       blank=True, null=True)
+    special_item16 = models.ForeignKey(Special_Item, related_name='special_item16', on_delete=models.CASCADE,
+                                       blank=True, null=True)
+    special_item17 = models.ForeignKey(Special_Item, related_name='special_item17', on_delete=models.CASCADE,
+                                       blank=True, null=True)
+
 
     pictures = models.URLField(max_length=200, blank=True, null=True)
     class Meta:
@@ -280,31 +342,7 @@ class Treasure(models.Model):
     def __str__(self):
         return self.name
 
-class Rarity(models.Model):
-    name = models.CharField(max_length=255)
 
-    class Meta:
-        ordering = ('name',)
-        verbose_name_plural = 'rarities'
-    def __str__(self):
-        return self.name
-class Special_Item(models.Model):
-    name = models.CharField(max_length=255)
-    description = models.TextField(max_length=4088)
-    rarity = models.ForeignKey(Rarity, related_name='rare', on_delete=models.CASCADE, blank=True, null=True)
-    lvl1 = models.BooleanField(default=False)
-    lvl2 = models.BooleanField(default=False)
-    lvl3 = models.BooleanField(default=False)
-    lvl4 = models.BooleanField(default=False)
-    lvl5 = models.BooleanField(default=False)
-    lvl6 = models.BooleanField(default=False)
-
-    class Meta:
-        ordering = ('name',)
-        verbose_name_plural = 'special items'
-
-    def __str__(self):
-        return self.name
 
 class Shop(models.Model):
     name = models.CharField(max_length=255)

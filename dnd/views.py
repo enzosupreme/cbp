@@ -1,13 +1,11 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import NonPlayerCharacter, Affiliation, Character_Sheet,Skill_Class, Weapon, Skill, Race, Spell, DM_Menu, Map, Monster,Special_Item,Shop
-from .forms import NewCharacterForm
+from .forms import NewCharacterForm, CharacterSheet
 
 
 def detail(request, pk):
     npcs = get_object_or_404(NonPlayerCharacter, pk=pk)
-
-
 
     return render(request, 'dnd/detail.html', {
         'npcs': npcs,
@@ -28,26 +26,6 @@ def NPC(request):
         #'query':query,
         'affiliation':affiliation,
         #'affiliation_id': int(affiliation_id)
-    })
-
-@login_required
-def new(request):
-    if request.method == 'POST':
-        form = NewCharacterForm(request.POST, request.FILES)
-
-        if form.is_valid():
-            npcs = form.save(commit=False)
-            npcs.created_by = request.user
-            npcs.save()
-
-            return redirect('dnd:npcs')
-
-    else:
-        form = NewCharacterForm()
-
-    return render(request, 'dnd/form.html', {
-        'form': form,
-        'title': 'New Character'
     })
 
 
@@ -152,4 +130,25 @@ def shopper(request,pk):
     return render(request, 'dnd/shop.html',{
         'shoppers':shoppers,
 
+    })
+
+@login_required
+def character_edit(request, pk):
+    character = get_object_or_404(Character_Sheet, pk=pk)
+
+    if request.method == 'POST':
+        form = CharacterSheet(request.POST, request.FILES, instance=character)
+
+        if form.is_valid():
+            character = form.save(commit=False)
+            character.save()
+
+            return redirect('dnd:characters', pk=character.id)
+
+    else:
+        form = CharacterSheet(instance=character)
+
+    return render(request, 'dnd/form.html', {
+        'form': form,
+        'title': 'Edit Character'
     })
