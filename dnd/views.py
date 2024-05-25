@@ -1,4 +1,5 @@
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import render
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import NonPlayerCharacter, Affiliation, Character_Sheet,Skill_Class, Weapon, Skill, Race, Spell, DM_Menu, Map, Monster,Special_Item,Shop
 from .forms import NewCharacterForm, CharacterSheet
