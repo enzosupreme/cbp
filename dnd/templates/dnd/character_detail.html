@@ -29,7 +29,7 @@
 
         <div class="pl-6 cols-span-3">
 
-            <div class="text-xs sm:text-md lg:text-lg xl:text-xl text-center mb-2 p-3 justify-center items-center bg-black rounded-xl col-span-1">
+            <div class="text-xs sm:text-md lg:text-lg xl:text-xl text-center mb-2 p-3 justify-center items-center bg-purple-900 rounded-xl col-span-1">
 
                <strong class="pl-4 text-yellow-500">Strength:<span class="p-2 text-white">{{ characters.str }} </span></strong>
                <strong class="pl-4 text-yellow-500">Dexterity<span class="p-2 text-white">{{ characters.dex }} </span></strong>
@@ -42,7 +42,7 @@
             <div class="text-xs sm:text-md lg:text-lg xl:text-xl text-center justify-center grid grid-cols-2">
 
              <div class="text-xs sm:text-md lg:text-lg xl:text-xl text-center justify-center rounded-xl">
-            <div class="p-3 bg-black pl-6 col-span-1 rounded-xl">
+            <div class="p-3 bg-purple-900 pl-6 col-span-1 rounded-xl">
                 <strong class=" text-yellow-500">Proficient Skills:</strong><br>
                 {% if characters.proficient_skill %}
                 <h1 class="text-white"> {{ characters.proficient_skill }}</h1>
@@ -73,7 +73,7 @@
                 </div>
 
             <div class="pl-3 text-xs sm:text-md lg:text-lg xl:text-xl text-center justify-center rounded-xl">
-            <div class="p-3 bg-black col-span-1 rounded-xl">
+            <div class="p-3 bg-purple-900 col-span-1 rounded-xl">
                 <strong class="text-yellow-500">Spells & Abilities:</strong><br>
                 {% if characters.spell %}
                 <a href="{{ characters.spell_link }}">
