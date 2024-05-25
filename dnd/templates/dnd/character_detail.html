@@ -31,18 +31,18 @@
 
             <div class="text-xs sm:text-md lg:text-lg xl:text-xl text-center mb-2 p-3 justify-center items-center bg-purple-900 rounded-xl col-span-1">
 
-               <strong class="pl-4 text-yellow-500">Strength:<span class="p-2 text-white">{{ characters.str }} </span></strong>
-               <strong class="pl-4 text-yellow-500">Dexterity<span class="p-2 text-white">{{ characters.dex }} </span></strong>
-               <strong class="pl-4 text-yellow-500">Constitution:<span class="p-2 text-white"> {{ characters.con }} </span></strong>
-               <strong class="pl-4 text-yellow-500">Intelligence:<span class="p-2 text-white"> {{ characters.int }} </span></strong>
-               <strong class="pl-4 text-yellow-500">Wisdom:<span class="p-2 text-white"> {{ characters.wis }} </span></strong>
-               <strong class="pl-4 text-yellow-500">Charisma:<span class="p-2 text-white"> {{ characters.cha }} </span></strong>
+               <strong class="pl-4 text-yellow-200">Strength:<span class="p-2 text-white">{{ characters.str }} </span></strong>
+               <strong class="pl-4 text-yellow-200">Dexterity<span class="p-2 text-white">{{ characters.dex }} </span></strong>
+               <strong class="pl-4 text-yellow-200">Constitution:<span class="p-2 text-white"> {{ characters.con }} </span></strong>
+               <strong class="pl-4 text-yellow-200">Intelligence:<span class="p-2 text-white"> {{ characters.int }} </span></strong>
+               <strong class="pl-4 text-yellow-200">Wisdom:<span class="p-2 text-white"> {{ characters.wis }} </span></strong>
+               <strong class="pl-4 text-yellow-200">Charisma:<span class="p-2 text-white"> {{ characters.cha }} </span></strong>
 
             </div>
             <div class="text-xs sm:text-md lg:text-lg xl:text-xl text-center justify-center grid grid-cols-2">
 
              <div class="text-xs sm:text-md lg:text-lg xl:text-xl text-center justify-center rounded-xl">
-            <div class="p-3 bg-black pl-6 col-span-1 rounded-xl">
+            <div class="p-3 bg-green-700 pl-6 col-span-1 rounded-xl">
                 <strong class=" text-yellow-500">Proficient Skills:</strong><br>
                 {% if characters.proficient_skill %}
                 <h1 class="text-white"> {{ characters.proficient_skill }}</h1>
@@ -73,7 +73,7 @@
                 </div>
 
             <div class="pl-3 text-xs sm:text-md lg:text-lg xl:text-xl text-center justify-center rounded-xl">
-            <div class="p-3 bg-black col-span-1 rounded-xl">
+            <div class="p-3 bg-green-700 col-span-1 rounded-xl">
                 <strong class="text-yellow-500">Spells & Abilities:</strong><br>
                 {% if characters.spell %}
                 <a href="{{ characters.spell_link }}">
@@ -168,7 +168,7 @@
 
             <div class="mb-4 pl-1 text-xs sm:text-md lg:text-lg xl:text-xl text-center bg-purple-900 grid grid-cols-1 rounded-xl">
                <strong class="text-white"> {{ characters.weapon_3 }} </strong>
-               <strong class="text-yellow-500">Damage<span class="text-white"> {{ characters.weapon_3.damage }} </span></strong>
+               <strong class="text-yellow-900">Damage<span class="text-white"> {{ characters.weapon_3.damage }} </span></strong>
                <strong class="text-yellow-500">Bonus <span class="text-white"> {{ characters.weapon3_bonus }} </span></strong>
             </div>
 
@@ -178,11 +178,11 @@
             </div>
             </div>
 
-    <div class="p-6 bg-green-900 rounded-xl bg-green-800 mb-2">
+    <div class="p-6 rounded-xl bg-green-900 mb-2">
         <div class=" grid grid-cols-1 gap-4">
         <strong class="pl-2 text-xs sm:text-md lg:text-lg xl:text-xl text-center text-yellow-500 ">Equipment</strong>
         </div>
-        <div class=" grid grid-cols-1 p-3">
+        <div class="grid grid-cols-1 p-3">
             <h2 class="text-sm sm:text-sm lg:text-lg xl:text-xl text-white">{{ characters.equipment }}</h2>
             </div>
         </div>
