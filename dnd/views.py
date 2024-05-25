@@ -143,7 +143,7 @@ def character_edit(request, pk):
             character = form.save(commit=False)
             character.save()
 
-            return redirect('dnd:characters', pk=character.id)
+            return redirect('dnd:characters')
 
     else:
         form = CharacterSheet(instance=character)

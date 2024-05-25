@@ -128,20 +128,6 @@
 
             </div>
 
-            <div class="p-3 bg-black col-span-1 rounded-xl">
-                <strong class="text-yellow-500">Special Items:</strong><br>
-                {% if characters.special_item %}
-                <a href="{{ characters.special_item.link }}">
-                <h1 class="text-white hover:text-yellow-600"> {{ characters.special_item }}</h1>
-                </a>
-                {% endif %}
-                {% if characters.special_item2 %}
-                <a href="{{ characters.special_item2.link }}">
-                <h1 class="text-white hover:text-yellow-600"> {{ characters.special_item2 }}</h1>
-                </a>
-                {% endif %}
-
-            </div>
                 </div>
             </div>
         </div>
@@ -188,7 +174,7 @@
             </div>
     </div>
 
-    <div class="p-6 bg-green-900 rounded-xl bg-green-800 mb-6">
+    <div class="p-6 bg-green-900 rounded-xl bg-green-800 mb-2">
         <div class=" grid grid-cols-1 gap-4">
         <strong class="pl-2 text-xs sm:text-md lg:text-lg xl:text-xl text-center text-yellow-500 ">Equipment</strong>
         </div>
@@ -203,7 +189,16 @@
         <strong class="pl-2 text-xs sm:text-md lg:text-lg xl:text-xl text-center text-yellow-500 ">Special Items:</strong>
         </div>
         <div class=" grid grid-cols-1 p-3">
-            <h2 class="text-sm sm:text-sm lg:text-lg xl:text-xl text-white">{{ characters.equipment }}</h2>
+            {% if characters.special_item %}
+                <a href="{{ characters.special_item.link }}">
+                <h1 class="text-white hover:text-yellow-600"> {{ characters.special_item }}</h1>
+                </a>
+                {% endif %}
+                {% if characters.special_item2 %}
+                <a href="{{ characters.special_item2.link }}">
+                <h1 class="text-white hover:text-yellow-600"> {{ characters.special_item2 }}</h1>
+                </a>
+                {% endif %}
             </div>
         </div>
     </div>
