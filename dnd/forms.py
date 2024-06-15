@@ -39,13 +39,13 @@ class NewCharacterForm(forms.ModelForm):
 class CharacterSheet(forms.ModelForm):
     class Meta:
         model = Character_Sheet
-        fields = ('character_name','lvl','hp','str','dex','con','int','wis','cha','ac','speed','special_item','special_item2','special_item3','special_item4','special_item5','special_item6','special_item7',)
+        fields = ('character_name','lvl','hp','str','dex','con','int','wis','cha','ac','speed','special_item','special_item2','special_item3','special_item4','special_item5','special_item6','special_item7','spell','spell2','spell3','spell4','spell5','spell6','spell7')
 
         widgets = {
             'character_name': forms.TextInput(attrs={
                 'class': INPUT_CLASSES
             }),
-            'lvl': forms.TextInput(attrs={
+            'inspiration': forms.TextInput(attrs={
                 'class': INPUT_CLASSES
             }),
             'hp': forms.TextInput(attrs={
@@ -75,6 +75,28 @@ class CharacterSheet(forms.ModelForm):
             'speed': forms.TextInput(attrs={
                 'class': INPUT_CLASSES
             }),
+            'spell': forms.Select(attrs={
+                'class': INPUT_CLASSES
+            }),
+            'spell2': forms.Select(attrs={
+                'class': INPUT_CLASSES
+            }),
+            'spell3': forms.Select(attrs={
+                'class': INPUT_CLASSES
+            }),
+            'spell4': forms.Select(attrs={
+                'class': INPUT_CLASSES
+            }),
+            'spell5': forms.Select(attrs={
+                'class': INPUT_CLASSES
+            }),
+            'spell6': forms.Select(attrs={
+                'class': INPUT_CLASSES
+            }),
+            'spell7': forms.Select(attrs={
+                'class': INPUT_CLASSES
+            }),
+
             'special_items': forms.Select(attrs={
                 'class': INPUT_CLASSES
             }),
