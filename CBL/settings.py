@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "projects",
     "charolette",
     "dnd",
+    "terrarium",
 ]
 
 MIDDLEWARE = [

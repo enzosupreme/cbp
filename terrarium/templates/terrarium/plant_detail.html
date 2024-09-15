@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+
+{% block title %}{{ plant.name }}{% endblock %}
+
+{% block content %}
+
+    <div class=" grid grid-cols-1 justify-center p-6 bg-green-900 rounded-xl">
+
+        <a href="{% url 'terrarium:terrariums' %}">
+
+            <div class="grid grid-cols-1">
+
+                <img src="{{ plant.image.url }}" class=" justify-center cols-span-1 pr-3 mb-8 rounded-xl">
+                <h1 class=" col-span-2 mb-6 text-xs sm:text-md lg:text-lg xl:text-xl text-center bg-green-900 text-white hover:text-yellow-700">{{ plant.description }}</h1>
+
+        </div>
+        </a>
+
+    </div>
+
+{% endblock %}
