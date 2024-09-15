@@ -15,7 +15,7 @@ class Terrarium(models.Model):
     image = models.ImageField(upload_to='terrarium_images', blank=True, null=True)
     plant1 = models.ForeignKey(Plant, related_name='plant', on_delete=models.CASCADE)
     plant2 = models.ForeignKey(Plant, related_name='plant2', on_delete=models.CASCADE)
-    plant3 = models.ForeignKey(Plant, related_name='plant3', on_delete=models.CASCADE)
+    plant3 = models.ForeignKey(Plant, related_name='plant3', on_delete=models.CASCADE, blank=True, null=True)
     plant4 = models.ForeignKey(Plant, related_name='plant4', on_delete=models.CASCADE, blank=True, null=True)
 
 
